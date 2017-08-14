@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4F427271F4000880011CAD0"
-               BuildableName = "MGPhotoPickerPicker.app"
+               BuildableName = "MGPhotoPicker.app"
                BlueprintName = "MGPhotoPicker-Demo"
                ReferencedContainer = "container:MGPhotoPicker-Demo.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4F427271F4000880011CAD0"
-            BuildableName = "MGPhotoPickerPicker.app"
+            BuildableName = "MGPhotoPicker.app"
             BlueprintName = "MGPhotoPicker-Demo"
             ReferencedContainer = "container:MGPhotoPicker-Demo.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4F427271F4000880011CAD0"
-            BuildableName = "MGPhotoPickerPicker.app"
+            BuildableName = "MGPhotoPicker.app"
             BlueprintName = "MGPhotoPicker-Demo"
             ReferencedContainer = "container:MGPhotoPicker-Demo.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4F427271F4000880011CAD0"
-            BuildableName = "MGPhotoPickerPicker.app"
+            BuildableName = "MGPhotoPicker.app"
             BlueprintName = "MGPhotoPicker-Demo"
             ReferencedContainer = "container:MGPhotoPicker-Demo.xcodeproj">
          </BuildableReference>

@@ -393,13 +393,13 @@ extension MGPhotoPicker:UIGestureRecognizerDelegate{
 }
 
 // MARK: - 自定义扩展
-extension MGPhotoPicker{
+public extension MGPhotoPicker{
     /**
      外部调用初始MGPhotoPicker
      
      - returns: 返回对象
      */
-    class func sharedInstance()->MGPhotoPicker{
+    public class func sharedInstance()->MGPhotoPicker{
         let picker = MGPhotoPicker.instancePicker
         if picker.pickerWindow != nil && picker.pickerWindow.isHidden == false {
             return picker
@@ -411,7 +411,7 @@ extension MGPhotoPicker{
      外部调用
      - returns: 返回最大选择张数
      */
-    class func selectMaxNumMethod() -> Int{
+    public class func selectMaxNumMethod() -> Int{
        return  MGPhotoPicker.instancePicker.selectMaxNum
     }
     /**
@@ -433,10 +433,10 @@ extension MGPhotoPicker{
      - parameter isEditDraw:      是否有划线和添加文字功能
      - parameter completionBlock: 回调张数
      
-     - returns: <#return value description#>
+     - returns: MGPhotoPicker?
      */
     @discardableResult
-    class func showView(selectMaxNum num:Int,isEditDraw:Bool,completionBlock: @escaping (_ imageModels:[MGImageModel]?) ->()) -> MGPhotoPicker?{
+    public class func showView(selectMaxNum num:Int,isEditDraw:Bool,completionBlock: @escaping (_ imageModels:[MGImageModel]?) ->()) -> MGPhotoPicker?{
 //        ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
 //        if (kCLAuthorizationStatusDenied == author || kCLAuthorizationStatusRestricted == author)
 //        {

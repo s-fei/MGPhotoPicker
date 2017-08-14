@@ -18,7 +18,7 @@ let kColors_MogoLightLine = UIColor(red: 229.0 / 255.0, green: 229.0 / 255.0, bl
 
 let subheadFont = UIFont.systemFont(ofSize: 14)
 
-class MGImageModel: NSObject {
+public class MGImageModel: NSObject {
     /*! 赋值使用 不要取值！！！！！！*/
     var aset:ALAsset?
     /*! 赋值使用 不要取值！！！！！！*/
@@ -59,7 +59,7 @@ class MGImageModel: NSObject {
         return UIImage(cgImage:aset!.defaultRepresentation().fullScreenImage().takeUnretainedValue())
     }
     
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+    override public func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
 }
