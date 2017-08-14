@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func click(_ sender: Any) {
         
         MGPhotoPicker.showView(selectMaxNum: 3, isEditDraw: true) { (models) in
-            print("Models:\(models)")
+            print("Models:\(String(describing: models))")
         }
     }
     override func didReceiveMemoryWarning() {
