@@ -277,7 +277,7 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let  cell =  collectionView.cellForItem(at: indexPath) as? MGImageCollectionCell {
-            let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+            let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
             let imageViewFrame = cell.convert(cell.imageView.frame, to: nil)
             imageController.imageViewFrame = imageViewFrame
             imageController.currentIndex = indexPath.row

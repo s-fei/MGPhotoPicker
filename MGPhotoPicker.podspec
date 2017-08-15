@@ -109,6 +109,7 @@ Pod::Spec.new do |s|
   # s.resources = "Resources/*.png"
   s.resource_bundles = {
     'Resources' => ["MGPhotoPicker-Demo/Sources/res/**"]
+    'Resources' => ["MGPhotoPicker-Demo/Sources/Classes/**/*.{png}"]
   }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"

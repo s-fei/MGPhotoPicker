@@ -118,7 +118,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
             MGProgressHUD.showTextAndHiddenView(view, message: "请选择照片")
             return
         }
-        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
         imageController.isEditImage = true
         imageController.imageViewFrame = CGRect.zero
         imageController.currentIndex = 0
@@ -235,7 +235,7 @@ extension MGGrounpPhotosViewController:UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let  cell =  collectionView.cellForItem(at: indexPath) as? MGImageCollectionCell {
-            let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+            let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
             let imageViewFrame = self.view.convert(cell.imageView.frame, to: self.view)
             imageController.imageViewFrame = imageViewFrame
             imageController.currentIndex = indexPath.row

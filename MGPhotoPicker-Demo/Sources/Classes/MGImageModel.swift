@@ -18,6 +18,10 @@ let kColors_MogoLightLine = UIColor(red: 229.0 / 255.0, green: 229.0 / 255.0, bl
 
 let subheadFont = UIFont.systemFont(ofSize: 14)
 
+let PathBundle = Bundle(for: MGImageModel.self).path(forResource: "Resources", ofType: "bundle")
+
+let ResourcesBundle:Bundle? = (PathBundle != nil ? Bundle(path: PathBundle!) : nil)
+
 public class MGImageModel: NSObject {
     /*! 赋值使用 不要取值！！！！！！*/
     var aset:ALAsset?

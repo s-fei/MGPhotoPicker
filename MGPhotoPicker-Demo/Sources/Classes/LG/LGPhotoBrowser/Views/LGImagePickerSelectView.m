@@ -23,14 +23,14 @@
         self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.backBtn setFrame:CGRectMake(0, 20, 60, 50)];
         [self.backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 25, 24)];
-        [self.backBtn setImage:GetImage(@"btn_back_imagePicker.png") forState:UIControlStateNormal];
+        [self.backBtn setImage:GetImage(@"btn_back_imagePicker") forState:UIControlStateNormal];
         [self addSubview:self.backBtn];
         
         self.selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.selectBtn setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 40 - 15, 20, 40, 40)];
         [self.selectBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 8, 8, 0)];
-        [self.selectBtn setImage:GetImage(@"checkbox_pic_non2.png") forState:UIControlStateNormal];
-        [self.selectBtn setImage:GetImage(@"checkbox_pic2.png") forState:UIControlStateSelected];
+        [self.selectBtn setImage:GetImage(@"checkbox_pic_non2") forState:UIControlStateNormal];
+        [self.selectBtn setImage:GetImage(@"checkbox_pic2") forState:UIControlStateSelected];
         [self addSubview:self.selectBtn];
     }
     return self;

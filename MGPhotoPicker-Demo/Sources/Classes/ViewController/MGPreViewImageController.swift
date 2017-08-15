@@ -65,7 +65,7 @@ class MGPreViewImageController: BasePhotoViewController {
         didSet{
              collectionView.alwaysBounceHorizontal = true;
              collectionView.isPagingEnabled = true
-             collectionView.register(UINib(nibName: "MGPreViewCell", bundle: Bundle.main)  , forCellWithReuseIdentifier: "MGPreViewCell")
+             collectionView.register(UINib(nibName: "MGPreViewCell", bundle: ResourcesBundle)  , forCellWithReuseIdentifier: "MGPreViewCell")
         }
     }
     

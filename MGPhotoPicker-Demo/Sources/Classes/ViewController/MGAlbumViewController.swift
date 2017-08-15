@@ -20,7 +20,7 @@ class MGAlbumViewController: BasePhotoViewController {
             tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: CGFloat.leastNormalMagnitude))
             tableView.estimatedRowHeight = 500.0
             tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.register(UINib(nibName: "MGAlbumCell", bundle: Bundle.main), forCellReuseIdentifier: "MGAlbumCell")
+            tableView.register(UINib(nibName: "MGAlbumCell", bundle: ResourcesBundle), forCellReuseIdentifier: "MGAlbumCell")
         }
     }
     
@@ -39,7 +39,7 @@ class MGAlbumViewController: BasePhotoViewController {
         tableView.reloadData()
         if groupModelArray.count > 0 {
             let  group = groupModelArray[0]
-            let  vc = MGGrounpPhotosViewController(nibName: "MGGrounpPhotosViewController", bundle: nil)
+            let  vc = MGGrounpPhotosViewController(nibName: "MGGrounpPhotosViewController", bundle: ResourcesBundle)
             vc.assetsGroup = group
             if let name = group.value(forProperty: ALAssetsGroupPropertyName) as? String{
                 if (name == "相机胶卷" || name == "camera roll" || name == "Camera Roll")
@@ -105,7 +105,7 @@ extension MGAlbumViewController:UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         if let  cell =  tableView.cellForRow(at: indexPath) as? MGAlbumCell {
             let  group = groupModelArray[indexPath.row]
-            let  vc = MGGrounpPhotosViewController(nibName: "MGGrounpPhotosViewController", bundle: nil)
+            let  vc = MGGrounpPhotosViewController(nibName: "MGGrounpPhotosViewController", bundle: ResourcesBundle)
             vc.assetsGroup = group
             vc.title = cell.titleLabel.text
             vc.completionBlock = {

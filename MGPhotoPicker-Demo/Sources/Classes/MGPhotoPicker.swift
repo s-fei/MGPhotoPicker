@@ -217,7 +217,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
             progressHub?.locationMode = .bottom
             return
         }
-        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
         imageController.imageViewFrame = CGRect.zero
         imageController.currentIndex = 0
         imageController.imageModelArray = currentImageModels
@@ -238,7 +238,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
     
     /*! 相册 */
     func tapPhotoAction(){
-        let  vc = MGAlbumViewController(nibName: "MGAlbumViewController", bundle: nil)
+        let  vc = MGAlbumViewController(nibName: "MGAlbumViewController", bundle: ResourcesBundle)
         vc.groupModelArray = pickerVC.groupModelArray
         let baseNav = UINavigationController(rootViewController: vc)
         vc.completionBlock = {
@@ -262,7 +262,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
             progressHub?.locationMode = .bottom
             return
         }
-        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+        let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
         imageController.isEditImage = true
         imageController.imageViewFrame = CGRect.zero
         imageController.currentIndex = 0
@@ -305,7 +305,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
                         return
                     }
                     /*! 进入预览编辑页面 */
-                    let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: nil)
+                    let imageController = MGPreViewImageController(nibName: "MGPreViewImageController", bundle: ResourcesBundle)
                     imageController.isCameraImage = true
                     imageController.isEditImage = true
                     imageController.imageViewFrame = CGRect.zero
