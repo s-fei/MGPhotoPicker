@@ -108,7 +108,8 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
   s.resource_bundles = {
-    'Resources' => ["MGPhotoPicker-Demo/Sources/res/**/*.{png}",
+    'Resources' => ["MGPhotoPicker-Demo/Sources/res/Camera/*.{png}",
+                    "MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
                     "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
   }
 
