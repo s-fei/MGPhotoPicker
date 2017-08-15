@@ -107,10 +107,6 @@
 		E4222A101F41986D00A60046 /* icon_pic_break@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E422299C1F41986C00A60046 /* icon_pic_break@2x.png */; };
 		E4222A111F41986D00A60046 /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E422299D1F41986C00A60046 /* lock@2x.png */; };
 		E4222A121F41986D00A60046 /* paizhao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E422299E1F41986C00A60046 /* paizhao@2x.png */; };
-		E4222A131F41986D00A60046 /* pic_selectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E422299F1F41986C00A60046 /* pic_selectedIcon@2x.png */; };
-		E4222A141F41986D00A60046 /* pic_selectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A01F41986C00A60046 /* pic_selectedIcon@3x.png */; };
-		E4222A151F41986D00A60046 /* pic_unSelectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A11F41986C00A60046 /* pic_unSelectedIcon@2x.png */; };
-		E4222A161F41986D00A60046 /* pic_unSelectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A21F41986C00A60046 /* pic_unSelectedIcon@3x.png */; };
 		E4222A171F41986D00A60046 /* shanguangdeng2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A31F41986C00A60046 /* shanguangdeng2@2x.png */; };
 		E4222A181F41986D00A60046 /* X@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A41F41986C00A60046 /* X@2x.png */; };
 		E4222A191F41986D00A60046 /* xiang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229A51F41986C00A60046 /* xiang@2x.png */; };
@@ -128,6 +124,10 @@
 		E4222A251F41986D00A60046 /* preview_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E42229B21F41986C00A60046 /* preview_icon@3x.png */; };
 		E4222A6D1F429EC800A60046 /* ic_closeView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A6B1F429EC800A60046 /* ic_closeView@2x.png */; };
 		E4222A6E1F429EC800A60046 /* ic_closeView@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A6C1F429EC800A60046 /* ic_closeView@3x.png */; };
+		E4222A731F42F44400A60046 /* pic_selectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A6F1F42F44400A60046 /* pic_selectedIcon@2x.png */; };
+		E4222A741F42F44400A60046 /* pic_selectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A701F42F44400A60046 /* pic_selectedIcon@3x.png */; };
+		E4222A751F42F44400A60046 /* pic_unSelectedIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A711F42F44400A60046 /* pic_unSelectedIcon@2x.png */; };
+		E4222A761F42F44400A60046 /* pic_unSelectedIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4222A721F42F44400A60046 /* pic_unSelectedIcon@3x.png */; };
 		E4F4272C1F4000880011CAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4272B1F4000880011CAD0 /* AppDelegate.swift */; };
 		E4F4272E1F4000880011CAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4272D1F4000880011CAD0 /* ViewController.swift */; };
 		E4F427311F4000880011CAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F4272F1F4000880011CAD0 /* Main.storyboard */; };
@@ -333,10 +333,6 @@
 		E422299C1F41986C00A60046 /* icon_pic_break@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pic_break@2x.png"; sourceTree = "<group>"; };
 		E422299D1F41986C00A60046 /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
 		E422299E1F41986C00A60046 /* paizhao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhao@2x.png"; sourceTree = "<group>"; };
-		E422299F1F41986C00A60046 /* pic_selectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_selectedIcon@2x.png"; sourceTree = "<group>"; };
-		E42229A01F41986C00A60046 /* pic_selectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_selectedIcon@3x.png"; sourceTree = "<group>"; };
-		E42229A11F41986C00A60046 /* pic_unSelectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_unSelectedIcon@2x.png"; sourceTree = "<group>"; };
-		E42229A21F41986C00A60046 /* pic_unSelectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_unSelectedIcon@3x.png"; sourceTree = "<group>"; };
 		E42229A31F41986C00A60046 /* shanguangdeng2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shanguangdeng2@2x.png"; sourceTree = "<group>"; };
 		E42229A41F41986C00A60046 /* X@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X@2x.png"; sourceTree = "<group>"; };
 		E42229A51F41986C00A60046 /* xiang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiang@2x.png"; sourceTree = "<group>"; };
@@ -355,6 +351,10 @@
 		E4222A271F419E8500A60046 /* MGPhotoPocker_Bridging_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGPhotoPocker_Bridging_Header.h; sourceTree = "<group>"; };
 		E4222A6B1F429EC800A60046 /* ic_closeView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_closeView@2x.png"; sourceTree = "<group>"; };
 		E4222A6C1F429EC800A60046 /* ic_closeView@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_closeView@3x.png"; sourceTree = "<group>"; };
+		E4222A6F1F42F44400A60046 /* pic_selectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_selectedIcon@2x.png"; sourceTree = "<group>"; };
+		E4222A701F42F44400A60046 /* pic_selectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_selectedIcon@3x.png"; sourceTree = "<group>"; };
+		E4222A711F42F44400A60046 /* pic_unSelectedIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_unSelectedIcon@2x.png"; sourceTree = "<group>"; };
+		E4222A721F42F44400A60046 /* pic_unSelectedIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pic_unSelectedIcon@3x.png"; sourceTree = "<group>"; };
 		E4F427281F4000880011CAD0 /* MGPhotoPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGPhotoPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F4272B1F4000880011CAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F4272D1F4000880011CAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -896,10 +896,6 @@
 				E422299C1F41986C00A60046 /* icon_pic_break@2x.png */,
 				E422299D1F41986C00A60046 /* lock@2x.png */,
 				E422299E1F41986C00A60046 /* paizhao@2x.png */,
-				E422299F1F41986C00A60046 /* pic_selectedIcon@2x.png */,
-				E42229A01F41986C00A60046 /* pic_selectedIcon@3x.png */,
-				E42229A11F41986C00A60046 /* pic_unSelectedIcon@2x.png */,
-				E42229A21F41986C00A60046 /* pic_unSelectedIcon@3x.png */,
 				E42229A31F41986C00A60046 /* shanguangdeng2@2x.png */,
 				E42229A41F41986C00A60046 /* X@2x.png */,
 				E42229A51F41986C00A60046 /* xiang@2x.png */,
@@ -910,6 +906,10 @@
 		E42229A61F41986C00A60046 /* PhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E4222A6F1F42F44400A60046 /* pic_selectedIcon@2x.png */,
+				E4222A701F42F44400A60046 /* pic_selectedIcon@3x.png */,
+				E4222A711F42F44400A60046 /* pic_unSelectedIcon@2x.png */,
+				E4222A721F42F44400A60046 /* pic_unSelectedIcon@3x.png */,
 				E4222A6B1F429EC800A60046 /* ic_closeView@2x.png */,
 				E4222A6C1F429EC800A60046 /* ic_closeView@3x.png */,
 				E42229A71F41986C00A60046 /* camera_icon@2x.png */,
@@ -1116,7 +1116,6 @@
 				E4222A0A1F41986D00A60046 /* MGPreViewImageController.xib in Resources */,
 				E4222A111F41986D00A60046 /* lock@2x.png in Resources */,
 				E4222A221F41986D00A60046 /* photo_icon@2x.png in Resources */,
-				E4222A141F41986D00A60046 /* pic_selectedIcon@3x.png in Resources */,
 				E4222A1B1F41986D00A60046 /* camera_icon@3x.png in Resources */,
 				E4222A061F41986D00A60046 /* MGGrounpPhotosViewController.xib in Resources */,
 				E4222A0B1F41986D00A60046 /* btn_back_imagePicker@2x.png in Resources */,
@@ -1125,31 +1124,32 @@
 				E4F427361F4000880011CAD0 /* LaunchScreen.storyboard in Resources */,
 				E4222A101F41986D00A60046 /* icon_pic_break@2x.png in Resources */,
 				E4222A041F41986D00A60046 /* MGAlbumViewController.xib in Resources */,
+				E4222A731F42F44400A60046 /* pic_selectedIcon@2x.png in Resources */,
 				E4222A171F41986D00A60046 /* shanguangdeng2@2x.png in Resources */,
 				E4222A1D1F41986D00A60046 /* cancel_icon@3x.png in Resources */,
+				E4222A741F42F44400A60046 /* pic_selectedIcon@3x.png in Resources */,
 				E42229B31F41986C00A60046 /* CLImageEditor.bundle in Resources */,
 				E4222A241F41986D00A60046 /* preview_icon@2x.png in Resources */,
 				E4222A6D1F429EC800A60046 /* ic_closeView@2x.png in Resources */,
 				E4222A0E1F41986D00A60046 /* checkbox_pic_non2@2x.png in Resources */,
-				E4222A161F41986D00A60046 /* pic_unSelectedIcon@3x.png in Resources */,
 				E4222A6E1F429EC800A60046 /* ic_closeView@3x.png in Resources */,
 				E4222A201F41986D00A60046 /* edit_icon@2x.png in Resources */,
 				E4222A0D1F41986D00A60046 /* checkbox_pic@2x.png in Resources */,
 				E4222A181F41986D00A60046 /* X@2x.png in Resources */,
+				E4222A761F42F44400A60046 /* pic_unSelectedIcon@3x.png in Resources */,
 				E4222A0F1F41986D00A60046 /* checkbox_pic_non@2x.png in Resources */,
 				E4222A1F1F41986D00A60046 /* confirm_icon@3x.png in Resources */,
 				E4222A1E1F41986D00A60046 /* confirm_icon@2x.png in Resources */,
 				E4222A1A1F41986D00A60046 /* camera_icon@2x.png in Resources */,
-				E4222A131F41986D00A60046 /* pic_selectedIcon@2x.png in Resources */,
 				E4222A191F41986D00A60046 /* xiang@2x.png in Resources */,
 				E42229FF1F41986C00A60046 /* MGPreViewCell.xib in Resources */,
 				E4222A121F41986D00A60046 /* paizhao@2x.png in Resources */,
 				E4F427311F4000880011CAD0 /* Main.storyboard in Resources */,
 				E4222A0C1F41986D00A60046 /* checkbox_pic2@2x.png in Resources */,
+				E4222A751F42F44400A60046 /* pic_unSelectedIcon@2x.png in Resources */,
 				E42229FD1F41986C00A60046 /* MGAlbumCell.xib in Resources */,
 				E4222A211F41986D00A60046 /* edit_icon@3x.png in Resources */,
 				E4222A1C1F41986D00A60046 /* cancel_icon@2x.png in Resources */,
-				E4222A151F41986D00A60046 /* pic_unSelectedIcon@2x.png in Resources */,
 				E42227751F4192FE00A60046 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
