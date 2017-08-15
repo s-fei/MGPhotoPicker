@@ -6,7 +6,6 @@
 //
 
 #import "CLDrawTool.h"
-#import <MGPhotoPicker/MGPhotoPicker-Swift.h>
 
 static NSString* const kCLDrawToolEraserIconName = @"eraserIconAssetsName";
 
@@ -38,7 +37,7 @@ static NSString* const kCLDrawToolEraserIconName = @"eraserIconAssetsName";
 
 + (BOOL)isAvailable
 {
-    return [MGPhotoPicker isEditDrawMethod];
+    return [CLImageEditorTheme theme].isEditDraw;
 }
 
 + (CGFloat)defaultDockedNumber

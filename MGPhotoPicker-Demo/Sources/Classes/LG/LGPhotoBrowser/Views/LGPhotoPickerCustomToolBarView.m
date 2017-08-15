@@ -8,7 +8,6 @@
 #import "LGPhotoPickerBrowserPhoto.h"
 #import "LGPhotoPickerCommon.h"
 #import "LGPhotoPickerCustomToolBarView.h"
-#import <MGPhotoPicker/MGPhotoPicker-Swift.h>
 @interface LGPhotoPickerCustomToolBarView ()
 
 @property(nonatomic, strong) UIToolbar *toolbar;
@@ -77,10 +76,7 @@
 
         [fileSizeButton setTitle:[NSString stringWithFormat:@"原图%@", self.fileSize] forState:UIControlStateNormal];
         [fileSizeButton setImageEdgeInsets:UIEdgeInsetsMake(13.0f, 0, 13.0f, 100 - 18)];
-
-        NSString *text = [fileSizeButton titleForState:UIControlStateNormal];
-
-        CGSize textSize = [text length] > 0 ? [UIViewComHelper realFontSize:fileSizeButton.titleLabel.font title:text maxSize:CGSizeMake(200, 50)] : CGSizeZero;
+        CGSize textSize = [fileSizeButton.titleLabel sizeThatFits:CGSizeMake(200, 50)];
         [fileSizeButton setTitleEdgeInsets:UIEdgeInsetsMake(12, 0, 12, 100 - textSize.width - 25)];
 
         self.isOriginalBtn = [self createSelecteOriginalItemWithImg:[UIImage imageNamed:@"btn_original.png"]
@@ -124,7 +120,7 @@
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(13.0f, 0, 13.0f, 100 - 18)];
     button.titleLabel.textAlignment = NSTextAlignmentLeft;
-    CGSize textSize = [title length] > 0 ? [UIViewComHelper realFontSize:button.titleLabel.font title:title maxSize:CGSizeMake(200, 50)] : CGSizeZero;
+    CGSize textSize = [button.titleLabel sizeThatFits:CGSizeMake(200, 50)];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(12, 0, 12, 100 - textSize.width - 25)];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barbutton = [[UIBarButtonItem alloc] initWithCustomView:button];

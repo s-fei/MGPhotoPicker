@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,10 +43,10 @@
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqZ-Oi-cni">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbR-AT-L41">
-                            <rect key="frame" x="10" y="5" width="40" height="40"/>
+                            <rect key="frame" x="10" y="22" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="NC0-5g-eM8"/>
                                 <constraint firstAttribute="height" constant="40" id="qMw-NP-wtD"/>
@@ -54,17 +55,17 @@
                             <state key="normal" image="ic_closeView"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWM-hG-bP5">
-                            <rect key="frame" x="320" y="5" width="40" height="40"/>
+                            <rect key="frame" x="320" y="22" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="2a3-xU-Tp6"/>
                                 <constraint firstAttribute="height" constant="40" id="g9R-PM-S78"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                            <state key="normal" image="checkbox_pic_non2"/>
-                            <state key="selected" image="checkbox_pic2"/>
+                            <state key="normal" image="pic_unSelectedIcon.png"/>
+                            <state key="selected" image="pic_selectedIcon.png"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-kP-3Bl">
-                            <rect key="frame" x="169" y="14" width="36" height="21"/>
+                            <rect key="frame" x="169" y="31" width="36" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -75,9 +76,9 @@
                         <constraint firstItem="sWM-hG-bP5" firstAttribute="centerY" secondItem="rbR-AT-L41" secondAttribute="centerY" id="6z3-0e-h5U"/>
                         <constraint firstItem="rbR-AT-L41" firstAttribute="leading" secondItem="uqZ-Oi-cni" secondAttribute="leading" constant="10" id="8Tp-BQ-l8u"/>
                         <constraint firstItem="PLE-kP-3Bl" firstAttribute="centerY" secondItem="rbR-AT-L41" secondAttribute="centerY" id="PlL-k0-I3W"/>
-                        <constraint firstItem="rbR-AT-L41" firstAttribute="centerY" secondItem="uqZ-Oi-cni" secondAttribute="centerY" id="RjX-BD-hkk"/>
+                        <constraint firstItem="rbR-AT-L41" firstAttribute="centerY" secondItem="uqZ-Oi-cni" secondAttribute="bottom" constant="-22" id="RjX-BD-hkk"/>
                         <constraint firstAttribute="trailing" secondItem="sWM-hG-bP5" secondAttribute="trailing" constant="15" id="hQ6-Lk-hiE"/>
-                        <constraint firstAttribute="height" constant="50" id="jkT-Ve-hHv"/>
+                        <constraint firstAttribute="height" constant="64" id="jkT-Ve-hHv"/>
                         <constraint firstItem="PLE-kP-3Bl" firstAttribute="centerX" secondItem="uqZ-Oi-cni" secondAttribute="centerX" id="wSm-Yy-xLU"/>
                     </constraints>
                 </view>
@@ -148,8 +149,8 @@
         </view>
     </objects>
     <resources>
-        <image name="checkbox_pic2" width="32" height="32"/>
-        <image name="checkbox_pic_non2" width="32" height="32"/>
         <image name="ic_closeView" width="20" height="20"/>
+        <image name="pic_selectedIcon.png" width="30" height="30"/>
+        <image name="pic_unSelectedIcon.png" width="30" height="30"/>
     </resources>
 </document>

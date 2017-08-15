@@ -13,7 +13,6 @@
 #import "CLTextLabel.h"
 
 #import "CLTextSettingView.h"
-#import <MGPhotoPicker/MGPhotoPicker-Swift.h>
 
 static NSString* const CLTextViewActiveViewDidChangeNotification = @"CLTextViewActiveViewDidChangeNotificationString";
 static NSString* const CLTextViewActiveViewDidTapNotification = @"CLTextViewActiveViewDidTapNotificationString";
@@ -81,7 +80,7 @@ static NSString* const kCLTextToolAlignRightIconName = @"alignRightIconAssetsNam
 
 + (BOOL)isAvailable
 {
-    return [MGPhotoPicker isEditDrawMethod];//([UIDevice iosVersion] >= 5.0);
+    return [CLImageEditorTheme theme].isEditDraw;//([UIDevice iosVersion] >= 5.0);
 }
 
 + (CGFloat)defaultDockedNumber

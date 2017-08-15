@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MGGrounpPhotosViewController" customModule="MogoRenter" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MGGrounpPhotosViewController" customModule="MGPhotoPicker" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="LqD-5s-uV3" id="Ynv-jm-A6Z"/>
                 <outlet property="collectionView" destination="sgT-1T-UQX" id="QHP-PU-cJM"/>
@@ -16,12 +20,12 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-1T-UQX">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OBH-aP-z5H">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,17 +38,17 @@
                     </connections>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LqD-5s-uV3">
-                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrG-ZH-IOw">
-                            <rect key="frame" x="495" y="14.5" width="20" height="20"/>
-                            <color key="backgroundColor" red="0.96470588239999999" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="270" y="14.5" width="20" height="20"/>
+                            <color key="backgroundColor" red="0.96470588239999999" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="an5-R2-HSe"/>
                                 <constraint firstAttribute="width" constant="20" id="dY4-Gn-2Cp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -53,7 +57,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbp-9q-TSl">
-                            <rect key="frame" x="525" y="5" width="60" height="40"/>
+                            <rect key="frame" x="300" y="5" width="60" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="VaL-dC-Axo"/>
                                 <constraint firstAttribute="width" constant="60" id="mpM-oQ-EaH"/>
@@ -61,11 +65,11 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <state key="normal" title="确认">
-                                <color key="titleColor" red="0.96470588239999999" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.96470588239999999" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="4iF-q4-mYQ"/>
                         <constraint firstItem="zbp-9q-TSl" firstAttribute="leading" secondItem="YrG-ZH-IOw" secondAttribute="trailing" constant="10" id="7vF-pP-5u4"/>
@@ -76,7 +80,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sgT-1T-UQX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AFa-e1-TPl"/>
                 <constraint firstItem="LqD-5s-uV3" firstAttribute="top" secondItem="sgT-1T-UQX" secondAttribute="bottom" id="Dqj-9Q-Vzl"/>

@@ -35,6 +35,7 @@ class MGAlbumViewController: BasePhotoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "相册"
+        UINavigationBar.appearance().tintColor = kColors_MogoRed
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancelAction))
         tableView.reloadData()
         if groupModelArray.count > 0 {

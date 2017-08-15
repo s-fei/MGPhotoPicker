@@ -28,7 +28,11 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
         }
     }
     /*! 是否有划线和添加文字功能 */
-    var isEditDraw = true
+    var isEditDraw = true {
+        didSet{
+            CLImageEditorTheme.share().isEditDraw = isEditDraw
+        }
+    }
     /*! 确认或取消后的回调 */
     var completionBlock:((_ imageModels:[MGImageModel]?) ->())!
     
@@ -414,14 +418,7 @@ public extension MGPhotoPicker{
     public class func selectMaxNumMethod() -> Int{
        return  MGPhotoPicker.instancePicker.selectMaxNum
     }
-    /**
-     外部调用
-     - returns: 是否有划线和添加文字功能
-     */
-    public class func isEditDrawMethod() -> Bool{
-        return  MGPhotoPicker.instancePicker.isEditDraw
-    }
-    
+
     // MARK: 正餐在这里啊
     /**
      重点来啦！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！

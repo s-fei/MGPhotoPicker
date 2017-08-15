@@ -15,6 +15,7 @@ let KScreenHeight = UIScreen.main.bounds.height
 let kColors_MogoLightBg = UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1)
 let kColors_MogoLightGrayBg = UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 1)
 let kColors_MogoLightLine = UIColor(red: 229.0 / 255.0, green: 229.0 / 255.0, blue: 229.0 / 255.0, alpha: 1)
+let kColors_MogoRed = UIColor(red: 246.0 / 255.0, green: 80.0 / 255.0, blue: 0 / 255.0, alpha: 1)
 
 let subheadFont = UIFont.systemFont(ofSize: 14)
 

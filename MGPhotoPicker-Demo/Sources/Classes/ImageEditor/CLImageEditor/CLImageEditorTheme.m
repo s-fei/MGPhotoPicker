@@ -22,6 +22,10 @@ static CLImageEditorTheme *_sharedInstance = nil;
     return _sharedInstance;
 }
 
++ (CLImageEditorTheme*)share{
+    return [CLImageEditorTheme theme];
+}
+
 + (id)allocWithZone:(NSZone *)zone
 {
     @synchronized(self) {
