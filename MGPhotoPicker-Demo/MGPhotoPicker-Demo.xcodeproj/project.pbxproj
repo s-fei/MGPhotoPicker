@@ -101,7 +101,7 @@
 		E4222B4A1F43DDEF00A60046 /* MGPreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4222AFD1F43DDEF00A60046 /* MGPreViewCell.swift */; };
 		E4222B4B1F43DDEF00A60046 /* MGPreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4222AFE1F43DDEF00A60046 /* MGPreViewCell.xib */; };
 		E4222B4C1F43DDEF00A60046 /* MGZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4222AFF1F43DDEF00A60046 /* MGZoomView.swift */; };
-		E4222B4D1F43DDEF00A60046 /* UIViewComHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4222B001F43DDEF00A60046 /* UIViewComHelper.swift */; };
+		E4222B4D1F43DDEF00A60046 /* MGPhotoPickerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4222B001F43DDEF00A60046 /* MGPhotoPickerTools.swift */; };
 		E4222B4E1F43DDEF00A60046 /* LGCameraImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4222B031F43DDEF00A60046 /* LGCameraImageView.m */; };
 		E4222B4F1F43DDEF00A60046 /* SCSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E4222B071F43DDEF00A60046 /* SCSlider.m */; };
 		E4222B501F43DDEF00A60046 /* ZLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E4222B091F43DDEF00A60046 /* ZLCamera.m */; };
@@ -280,7 +280,7 @@
 		E4222AFD1F43DDEF00A60046 /* MGPreViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGPreViewCell.swift; sourceTree = "<group>"; };
 		E4222AFE1F43DDEF00A60046 /* MGPreViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGPreViewCell.xib; sourceTree = "<group>"; };
 		E4222AFF1F43DDEF00A60046 /* MGZoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGZoomView.swift; sourceTree = "<group>"; };
-		E4222B001F43DDEF00A60046 /* UIViewComHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewComHelper.swift; sourceTree = "<group>"; };
+		E4222B001F43DDEF00A60046 /* MGPhotoPickerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGPhotoPickerTools.swift; sourceTree = "<group>"; };
 		E4222B021F43DDEF00A60046 /* LGCameraImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCameraImageView.h; sourceTree = "<group>"; };
 		E4222B031F43DDEF00A60046 /* LGCameraImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCameraImageView.m; sourceTree = "<group>"; };
 		E4222B041F43DDEF00A60046 /* LGPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPhoto.h; sourceTree = "<group>"; };
@@ -722,7 +722,7 @@
 				E4222AFD1F43DDEF00A60046 /* MGPreViewCell.swift */,
 				E4222AFE1F43DDEF00A60046 /* MGPreViewCell.xib */,
 				E4222AFF1F43DDEF00A60046 /* MGZoomView.swift */,
-				E4222B001F43DDEF00A60046 /* UIViewComHelper.swift */,
+				E4222B001F43DDEF00A60046 /* MGPhotoPickerTools.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1098,12 +1098,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MGPhotoPicker-Demo/Pods-MGPhotoPicker-Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MGProgressHUD/MGProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1174,7 +1172,7 @@
 				E4222B181F43DDEF00A60046 /* CLBloomEffect.m in Sources */,
 				E4222B131F43DDEF00A60046 /* CLImageToolInfo.m in Sources */,
 				E4222B301F43DDEF00A60046 /* UIView+Frame.m in Sources */,
-				E4222B4D1F43DDEF00A60046 /* UIViewComHelper.swift in Sources */,
+				E4222B4D1F43DDEF00A60046 /* MGPhotoPickerTools.swift in Sources */,
 				E4222B281F43DDEF00A60046 /* CLImageEditorTheme+Private.m in Sources */,
 				E4222B2C1F43DDEF00A60046 /* CLClassList.m in Sources */,
 				E4222B2D1F43DDEF00A60046 /* CLSplineInterpolator.m in Sources */,

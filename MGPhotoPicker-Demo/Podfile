@@ -7,8 +7,6 @@ target 'MGPhotoPicker-Demo' do
 
   # Pods for MGPhotoPicker-Demo
   pod 'MGProgressHUD'
-  pod 'SDWebImage'
-
 
   target 'MGPhotoPicker-DemoTests' do
     inherit! :search_paths
