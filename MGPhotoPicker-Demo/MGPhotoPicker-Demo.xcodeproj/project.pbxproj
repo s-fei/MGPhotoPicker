@@ -421,12 +421,12 @@
 		E4222A7B1F43DDEE00A60046 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E4222A7C1F43DDEE00A60046 /* ImageEditor */,
 				E4222AED1F43DDEF00A60046 /* MGImageModel.swift */,
 				E4222AEE1F43DDEF00A60046 /* MGPhotoPicker.swift */,
 				E4222AEF1F43DDEF00A60046 /* MGPhotoPocker_Bridging_Header.h */,
 				E4222AF01F43DDEF00A60046 /* ViewController */,
 				E4222B011F43DDEF00A60046 /* ZLCamera */,
+				E4222A7C1F43DDEE00A60046 /* ImageEditor */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

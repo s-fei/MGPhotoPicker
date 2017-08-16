@@ -7,8 +7,6 @@
 //
 
 #import "ZLCameraImageView.h"
-#import "UIView+Frame.h"
-//#import "UIImage+ZLPhotoLib.h"
 
 @interface ZLCameraImageView ()
 @property (strong, nonatomic) UIImageView *deleBjView;
@@ -21,11 +19,8 @@
     if (!_deleBjView) {
         _deleBjView = [[UIImageView alloc] init];
         _deleBjView.image = [UIImage imageNamed:@"X.png"];
-        _deleBjView.width = 25;
-        _deleBjView.height = 25;
+        _deleBjView.frame = CGRectMake(50, 0, 25, 25);
         _deleBjView.hidden = YES;
-        _deleBjView.x = 50;
-        _deleBjView.y = 0;
         _deleBjView.userInteractionEnabled = YES;
         [_deleBjView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleImage:)]];
         [self addSubview:_deleBjView];

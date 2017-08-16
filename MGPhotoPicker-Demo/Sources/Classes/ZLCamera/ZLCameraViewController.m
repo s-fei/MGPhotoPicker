@@ -15,7 +15,6 @@
 #import "LGCameraImageView.h"
 #import "SCSlider.h"
 #import <MGProgressHUD/MGProgressHUD-Swift.h>
-#import "UIView+Frame.h"
 
 typedef void(^codeBlock)();
 //static CGFloat BOTTOM_HEIGHT = 60;
@@ -106,7 +105,7 @@ typedef void(^codeBlock)();
     CGFloat viewHeight = viewWidth / 480 * 640;;
     self.preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
     self.preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    viewHeight = viewHeight > (self.view.frame.size.height - 50 - 60) ? (self.view.height - 50 - 60) :viewHeight;
+    viewHeight = viewHeight > (self.view.frame.size.height - 50 - 60) ? (self.view.frame.size.height - 50 - 60) :viewHeight;
     self.preview.frame = CGRectMake(0, 50,viewWidth, viewHeight);
     
     NSLog(@"%@",NSStringFromCGRect(self.view.frame));
@@ -312,10 +311,7 @@ typedef void(^codeBlock)();
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     button.backgroundColor = [UIColor clearColor];
-    button.width = 80;
-    button.y = 0;
-    button.height = self.topView.height;
-    button.x = x;
+    button.frame = CGRectMake(x, 0, 80, self.topView.frame.size.height);
     [self.topView addSubview:button];
     return button;
 }
@@ -328,12 +324,12 @@ typedef void(^codeBlock)();
     
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = [UIColor blackColor];
-    topView.frame = CGRectMake(0, 0, self.view.width, 60);
+    topView.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
     [self.contentView addSubview:topView];
     self.topView = topView;
     
     // 头部View
-    UIButton *deviceBtn = [self setupButtonWithImageName:@"xiang.png" andX:self.view.width - margin - width];
+    UIButton *deviceBtn = [self setupButtonWithImageName:@"xiang.png" andX:self.view.frame.size.width - margin - width];
     [deviceBtn addTarget:self action:@selector(changeCameraDevice:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *flashBtn = [self setupButtonWithImageName:@"shanguangdeng2.png" andX:10];
@@ -358,7 +354,7 @@ typedef void(^codeBlock)();
     
     
     // 底部View
-    UIView *controlView = [[UIView alloc] initWithFrame:CGRectMake(0,  self.caramView.height + 50 , self.view.width, self.view.height-(self.caramView.height + 50))];
+    UIView *controlView = [[UIView alloc] initWithFrame:CGRectMake(0,  self.caramView.frame.size.height + 50 , self.view.frame.size.width, self.view.frame.size.height-(self.caramView.frame.size.height + 50))];
     controlView.backgroundColor = [UIColor blackColor];
     controlView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     self.controlView = controlView;
@@ -369,16 +365,16 @@ typedef void(^codeBlock)();
     contentView1.alpha = 0.3;
     [controlView addSubview:contentView1];
     
-    CGFloat x = (self.view.width - width) / 3;
+    CGFloat x = (self.view.frame.size.width - width) / 3;
     //取消
     UIButton *cancalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancalBtn.frame = CGRectMake(0, 0, x, controlView.height);
+    cancalBtn.frame = CGRectMake(0, 0, x, controlView.frame.size.height);
     [cancalBtn setTitle:@"取消" forState:UIControlStateNormal];
     [cancalBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     [controlView addSubview:cancalBtn];
     //拍照
     self.cameraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.cameraBtn.frame = CGRectMake(x+margin, margin / 4, x, controlView.height - margin / 2);
+    self.cameraBtn.frame = CGRectMake(x+margin, margin / 4, x, controlView.frame.size.height - margin / 2);
     self.cameraBtn.showsTouchWhenHighlighted = YES;
     self.cameraBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.cameraBtn setImage:[UIImage imageNamed:@"paizhao.png"] forState:UIControlStateNormal];
@@ -387,7 +383,7 @@ typedef void(^codeBlock)();
     // 完成
     if (self.cameraType == ZLCameraContinuous) {
         UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        doneBtn.frame = CGRectMake(self.view.width - 2 * margin - width, 0, width, controlView.height);
+        doneBtn.frame = CGRectMake(self.view.frame.size.width - 2 * margin - width, 0, width, controlView.frame.size.height);
         [doneBtn setTitle:@"完成" forState:UIControlStateNormal];
         [doneBtn addTarget:self action:@selector(doneAction) forControlEvents:UIControlEventTouchUpInside];
         [controlView addSubview:doneBtn];

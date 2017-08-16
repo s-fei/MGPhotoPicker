@@ -91,7 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MGPhotoPicker-Demo/Sources/Classes/**/*.{h,m,swift}"
+  s.source_files  = "MGPhotoPicker-Demo/Sources/Classes/*.{h,m,swift}",'MGPhotoPicker-Demo/Sources/Classes/ViewController/**/*.{swift}'
+  # s.public_header_files = "MGPhotoPicker-Demo/Sources/Classes/*.{swift}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -108,8 +109,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
   s.resource_bundles = {
-    'Resources' => ["MGPhotoPicker-Demo/Sources/res/Camera/*.{png}",
-                    "MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
+    'Resources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
                     "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
   }
 
@@ -140,6 +140,20 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
   s.dependency "MGProgressHUD"
-  s.dependency "SDWebImage"
+
+  s.subspec 'ImageEditor' do |ss|
+    ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/**/*.{h,m}',
+                      'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/OptionalImageTools/**/*.{h,m}'
+    ss.resource_bundles = {
+     'Resources' => ["MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/**/*.{png}"]
+    }
+  end
+
+  s.subspec 'ZLCamera' do |ss|
+    ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ZLCamera/**/*.{h,m}'
+    ss.resource_bundles = {
+     'Resources' => ["MGPhotoPicker-Demo/Sources/res/Camera/*.{png}"]
+    }
+  end
 
 end

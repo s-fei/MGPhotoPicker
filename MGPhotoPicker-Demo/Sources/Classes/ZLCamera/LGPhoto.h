@@ -48,6 +48,5 @@
 
 #import "ZLCameraViewController.h"
 #import "LGPhotoPickerCommon.h"
-#import "UIView+Frame.h"
 
 #endif
