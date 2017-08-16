@@ -476,6 +476,14 @@ public extension MGPhotoPicker{
         picker.createWindow()
         return picker
     }
+    
+    /**
+     外部调用
+     - returns: 返回最大选择张数
+     */
+    public class func selectMaxNumMethod() -> Int{
+        return  MGPhotoPicker.instancePicker.selectMaxNum
+    }
 }
 
 
