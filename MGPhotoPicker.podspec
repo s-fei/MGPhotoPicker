@@ -109,7 +109,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
   s.resource_bundles = {
-    'Resources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
+    'PhotoResources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
                     "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
   }
 
@@ -144,14 +144,14 @@ Pod::Spec.new do |s|
   s.subspec 'ImageEditor' do |ss|
     ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/**/*.{h,m}',
                       'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/OptionalImageTools/**/*.{h,m}'
-    # ss.resources =  "MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/*.bundle"
+    ss.resources =  "MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/*.bundle"
   end
 
   s.subspec 'ZLCamera' do |ss|
     ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ZLCamera/**/*.{h,m}'
-    # ss.resource_bundles = {
-    #  'ZLResources' => ["MGPhotoPicker-Demo/Sources/res/Camera/*.{png}"]
-    # }
+    ss.resource_bundles = {
+     'ZLResources' => ["MGPhotoPicker-Demo/Sources/res/Camera/*.{png}"]
+    }
   end
 
 end
