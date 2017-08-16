@@ -107,11 +107,11 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources  =  "MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.png","MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"
-  # s.resource_bundles = {
-  #   'PhotoResources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
-  #                   "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
-  # }
+  # s.resources  =  "MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.png","MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"
+  s.resource_bundles = {
+    'PhotoResources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
+                    "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
+  }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
