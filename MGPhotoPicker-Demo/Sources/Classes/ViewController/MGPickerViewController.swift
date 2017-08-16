@@ -423,6 +423,7 @@ class MGPhotoToolBarView:UIView{
         for index in 1...btnTitleDict.count{
             let btn = UIButton(type: .custom)
             btn.tag = index
+            btn.clipsToBounds = true
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             btn.showsTouchWhenHighlighted = true
 //            if index == 1 || index == btnTitleDict.count {

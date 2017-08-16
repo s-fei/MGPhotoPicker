@@ -12,20 +12,17 @@
 #import "ZLCameraViewController.h"
 #import "ZLCameraImageView.h"
 #import "ZLCameraView.h"
-#import "LGPhoto.h"
 #import "LGCameraImageView.h"
 #import "SCSlider.h"
 #import <MGProgressHUD/MGProgressHUD-Swift.h>
+#import "UIView+Frame.h"
 
 typedef void(^codeBlock)();
-static CGFloat ZLCameraColletionViewW = 80;
-static CGFloat ZLCameraColletionViewPadding = 20;
 //static CGFloat BOTTOM_HEIGHT = 60;
 
-@interface ZLCameraViewController () <UIActionSheetDelegate,UICollectionViewDataSource,UICollectionViewDelegate,AVCaptureMetadataOutputObjectsDelegate,ZLCameraImageViewDelegate,ZLCameraViewDelegate,LGPhotoPickerBrowserViewControllerDataSource,LGPhotoPickerBrowserViewControllerDelegate,LGCameraImageViewDelegate>
+@interface ZLCameraViewController () <UIActionSheetDelegate,AVCaptureMetadataOutputObjectsDelegate,ZLCameraImageViewDelegate,ZLCameraViewDelegate,LGCameraImageViewDelegate>
 
 @property (weak,nonatomic) ZLCameraView *caramView;
-@property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UIViewController *currentViewController;
 
 // Datas
@@ -78,30 +75,6 @@ static CGFloat ZLCameraColletionViewPadding = 20;
     return _dictM;
 }
 
-#pragma mark View
-- (UICollectionView *)collectionView{
-    if (!_collectionView) {
-        
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(ZLCameraColletionViewW, ZLCameraColletionViewW);
-        layout.minimumLineSpacing = ZLCameraColletionViewPadding;
-        
-        CGFloat collectionViewH = ZLCameraColletionViewW;
-        CGFloat collectionViewY = self.caramView.height - collectionViewH - 10;
-        
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, collectionViewY, self.view.width, collectionViewH)
-                                                              collectionViewLayout:layout];
-        collectionView.backgroundColor = [UIColor clearColor];
-        [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-        collectionView.delegate = self;
-        collectionView.dataSource = self;
-        [self.caramView addSubview:collectionView];
-        self.collectionView = collectionView;
-    }
-    return _collectionView;
-}
-
 - (void) initialize
 {
     //1.创建会话层
@@ -133,7 +106,7 @@ static CGFloat ZLCameraColletionViewPadding = 20;
     CGFloat viewHeight = viewWidth / 480 * 640;;
     self.preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
     self.preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    viewHeight = viewHeight > (self.view.height - 50 - 60) ? (self.view.height - 50 - 60) :viewHeight;
+    viewHeight = viewHeight > (self.view.frame.size.height - 50 - 60) ? (self.view.height - 50 - 60) :viewHeight;
     self.preview.frame = CGRectMake(0, 50,viewWidth, viewHeight);
     
     NSLog(@"%@",NSStringFromCGRect(self.view.frame));
@@ -355,7 +328,7 @@ static CGFloat ZLCameraColletionViewPadding = 20;
     
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = [UIColor blackColor];
-    topView.frame = CGRectMake(0, 0, self.view.width, 50);
+    topView.frame = CGRectMake(0, 0, self.view.width, 60);
     [self.contentView addSubview:topView];
     self.topView = topView;
     
@@ -423,80 +396,6 @@ static CGFloat ZLCameraColletionViewPadding = 20;
     [self.contentView addSubview:controlView];
 }
 
-- (NSInteger ) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
-- (NSInteger ) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.images.count;
-}
-
-- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    
-    ZLCamera *camera = self.images[indexPath.item];
-    
-    ZLCameraImageView *lastView = [cell.contentView.subviews lastObject];
-    if(![lastView isKindOfClass:[ZLCameraImageView class]]){
-        // 解决重用问题
-        UIImage *image = camera.thumbImage;
-        ZLCameraImageView *imageView = [[ZLCameraImageView alloc] init];
-        imageView.delegatge = self;
-        imageView.edit = YES;
-        imageView.image = image;
-        imageView.frame = cell.bounds;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        [cell.contentView addSubview:imageView];
-    }
-    
-    lastView.image = camera.thumbImage;
-    
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    LGPhotoPickerBrowserViewController *browserVc = [[LGPhotoPickerBrowserViewController alloc] init];
-    browserVc.dataSource = self;
-    browserVc.delegate = self;
-    browserVc.showType = LGShowImageTypeImageBroswer;
-    browserVc.currentIndexPath = [NSIndexPath indexPathForItem:indexPath.item inSection:0];
-    [self presentViewController:browserVc animated:NO completion:nil];
-}
-
-
-#pragma mark - <ZLPhotoPickerBrowserViewControllerDataSource>
-- (NSInteger)photoBrowser:(LGPhotoPickerBrowserViewController *)photoBrowser numberOfItemsInSection:(NSUInteger)section{
-    return self.images.count;
-}
-
-- (LGPhotoPickerBrowserPhoto *) photoBrowser:(LGPhotoPickerBrowserViewController *)pickerBrowser photoAtIndexPath:(NSIndexPath *)indexPath{
-    
-    id imageObj = [[self.images objectAtIndex:indexPath.row] photoImage];
-    LGPhotoPickerBrowserPhoto *photo = [LGPhotoPickerBrowserPhoto photoAnyImageObjWith:imageObj];
-    
-    UICollectionViewCell *cell = (UICollectionViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-    
-    UIImageView *imageView = [[cell.contentView subviews] lastObject];
-    photo.toView = imageView;
-    photo.thumbImage = imageView.image;
-    
-    return photo;
-}
-
-- (void)deleteImageView:(ZLCameraImageView *)imageView{
-    NSMutableArray *arrM = [self.images mutableCopy];
-    for (ZLCamera *camera in self.images) {
-        UIImage *image = camera.thumbImage;
-        if ([image isEqual:imageView.image]) {
-            [arrM removeObject:camera];
-        }
-    }
-    self.images = arrM;
-    [self.collectionView reloadData];
-}
-
 - (void)showPickerVc:(UIViewController *)vc{
     __weak typeof(vc)weakVc = vc;
     if (weakVc != nil) {
@@ -546,8 +445,6 @@ static CGFloat ZLCameraColletionViewPadding = 20;
                      [self displayImage:camera.photoImage];
                  } else if (self.cameraType == ZLCameraContinuous) {
                      [self.images addObject:camera];
-                     [self.collectionView reloadData];
-                     [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.images.count - 1 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionRight];
                  }
                  self.failIndex = 0;
              }
