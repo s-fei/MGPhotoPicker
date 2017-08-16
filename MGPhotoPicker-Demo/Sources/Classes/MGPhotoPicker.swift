@@ -398,27 +398,8 @@ extension MGPhotoPicker:UIGestureRecognizerDelegate{
 
 // MARK: - 自定义扩展
 public extension MGPhotoPicker{
-    /**
-     外部调用初始MGPhotoPicker
-     
-     - returns: 返回对象
-     */
-    public class func sharedInstance()->MGPhotoPicker{
-        let picker = MGPhotoPicker.instancePicker
-        if picker.pickerWindow != nil && picker.pickerWindow.isHidden == false {
-            return picker
-        }
-        picker.createWindow()
-        return picker
-    }
-    /**
-     外部调用
-     - returns: 返回最大选择张数
-     */
-    public class func selectMaxNumMethod() -> Int{
-       return  MGPhotoPicker.instancePicker.selectMaxNum
-    }
-
+    
+    
     // MARK: 正餐在这里啊
     /**
      重点来啦！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
@@ -434,15 +415,7 @@ public extension MGPhotoPicker{
      */
     @discardableResult
     public class func showView(selectMaxNum num:Int,isEditDraw:Bool,completionBlock: @escaping (_ imageModels:[MGImageModel]?) ->()) -> MGPhotoPicker?{
-//        ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
-//        if (kCLAuthorizationStatusDenied == author || kCLAuthorizationStatusRestricted == author)
-//        {
-//            return NO;
-//        }
-//        return YES;
-        
         let author = ALAssetsLibrary.authorizationStatus()
-        
         if author == .denied || author == .restricted {
             let alertController = UIAlertController(title: "通知",
                                                     message: "需要打开图片访问权限，才可以查看图片哟~",
@@ -457,7 +430,7 @@ public extension MGPhotoPicker{
             alertController.addAction(okAction)
             
             guard let vc =  UIApplication.shared.keyWindow?.rootViewController else { return nil}
-
+            
             if(UIDevice.current.userInterfaceIdiom == .phone)
             {
                 vc.present(alertController, animated: true, completion: nil)
@@ -471,7 +444,7 @@ public extension MGPhotoPicker{
             return nil
         }
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-
+        
         let picker =  MGPhotoPicker.sharedInstance()
         picker.isEditDraw = isEditDraw
         if num > 1 {
@@ -482,11 +455,26 @@ public extension MGPhotoPicker{
         return picker
     }
     
-    class func dismissView(){
+    public class func dismissView(){
         let picker = MGPhotoPicker.instancePicker
         if picker.pickerWindow != nil{
             picker.dismiss()
         }
+    }
+    
+    
+    /**
+     外部调用初始MGPhotoPicker
+     
+     - returns: 返回对象
+     */
+    public class func sharedInstance()->MGPhotoPicker{
+        let picker = MGPhotoPicker.instancePicker
+        if picker.pickerWindow != nil && picker.pickerWindow.isHidden == false {
+            return picker
+        }
+        picker.createWindow()
+        return picker
     }
 }
 

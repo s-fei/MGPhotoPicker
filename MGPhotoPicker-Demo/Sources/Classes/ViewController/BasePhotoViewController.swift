@@ -14,7 +14,7 @@ import UIKit
 class BasePhotoViewController: UIViewController {
     
     /*! 最大可选张数 */
-    var selectMaxNum:Int = MGPhotoPicker.selectMaxNumMethod()
+    var selectMaxNum:Int = MGPhotoPicker.sharedInstance().selectMaxNum
     /*! 取消和完成后的回调 */
     var completionBlock:((_ imageModels:[MGImageModel]?,_ viewController:BasePhotoViewController?) ->())!
     

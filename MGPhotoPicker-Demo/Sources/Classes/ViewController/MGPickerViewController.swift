@@ -57,11 +57,11 @@ class MGPickerViewController: BasePhotoViewController {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
         contentView = UIView(frame: CGRect.zero)
-        contentView.backgroundColor = kColors_MogoLightBg
+        contentView.backgroundColor = kColors_LightBg
         view.addSubview(contentView)
         
         toolBarView = MGPhotoToolBarView(frame: CGRect.zero)
-        toolBarView.backgroundColor = kColors_MogoLightGrayBg.withAlphaComponent(0.7)
+        toolBarView.backgroundColor = kColors_LightGrayBg.withAlphaComponent(0.7)
         contentView.addSubview(toolBarView)
         
         let layout = UICollectionViewFlowLayout()
@@ -73,7 +73,7 @@ class MGPickerViewController: BasePhotoViewController {
         pickerCollectionView.alwaysBounceHorizontal = true;
         pickerCollectionView.showsHorizontalScrollIndicator = false
         pickerCollectionView.register(MGImageCollectionCell.self, forCellWithReuseIdentifier: "MGImageCollectionCell")
-        pickerCollectionView.backgroundColor = kColors_MogoLightBg
+        pickerCollectionView.backgroundColor = kColors_LightBg
         contentView.addSubview(pickerCollectionView)
         
         editBarView = UIView(frame: CGRect.zero)
@@ -412,11 +412,11 @@ class MGPhotoToolBarView:UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         topLineView = UIView(frame: CGRect.zero)
-        topLineView.backgroundColor = kColors_MogoLightLine
+        topLineView.backgroundColor = kColors_LightLine
         addSubview(topLineView)
         
         bottomLineView = UIView(frame: CGRect.zero)
-        bottomLineView.backgroundColor = kColors_MogoLightLine
+        bottomLineView.backgroundColor = kColors_LightLine
         addSubview(bottomLineView)
         
         btnArr.removeAll()
@@ -440,7 +440,7 @@ class MGPhotoToolBarView:UIView{
                 let string = dict["key"] as? String
                 if string == "text" {
                     btn.setTitle(dict["value"] as? String, for: UIControlState())
-//                    btn.backgroundColor = kColors_MogoLightBg
+//                    btn.backgroundColor = kColors_LightBg
 //                    btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
                     
                 }
@@ -483,7 +483,7 @@ class MGPhotoToolBarView:UIView{
                 let prevBtn = btnArr[0]
                 let leftLine = UILabel(frame: CGRect(x:bounds.width - prevBtn.frame.width , y: prevBtn.frame.minY + 8 , width: 1, height: prevBtn.frame.height - 16))
                 leftLine.text = ""
-                leftLine.backgroundColor = kColors_MogoLightLine
+                leftLine.backgroundColor = kColors_LightLine
                 addSubview(leftLine)
                 btn.frame = CGRect(x:bounds.width - prevBtn.frame.width , y: prevBtn.frame.minY, width: prevBtn.frame.width, height: prevBtn.frame.height)
             }
