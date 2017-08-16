@@ -9,12 +9,14 @@
 #define ZLAssetsPickerDemo_PickerCommon_h
 
 
-
 #define iOS7gt ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 //#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height - [[UIApplication sharedApplication] statusBarFrame].size.height
 //#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
-#define GetImage(imageName)  [UIImage imageNamed:imageName]
+#define GetImage(imageName)  [UIImage imageNamed:imageName inBundle:ImageBundle compatibleWithTraitCollection:nil]
+
+#define ImageBundle [NSBundle bundleWithPath:[[NSBundle bundleForClass:[ZLCameraImageView class]] pathForResource:@"Camera" ofType:@"bundle"]]
+
 #define XG_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
 #define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
 #define IOS8_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )

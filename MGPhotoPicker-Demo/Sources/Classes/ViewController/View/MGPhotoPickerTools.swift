@@ -20,3 +20,4 @@ let PathBundle = Bundle(for: MGImageModel.self).path(forResource: "Resources", o
 
 let ResourcesBundle:Bundle? = (PathBundle != nil ? Bundle(path: PathBundle!) : nil)
 
+

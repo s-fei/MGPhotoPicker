@@ -344,8 +344,8 @@ class MGImageCollectionCell: UICollectionViewCell {
         imageView.layer.addSublayer(imageLayer)
         
         selectBtn = UIButton(type: .custom)
-        selectBtn.setImage(UIImage(named: "pic_unSelectedIcon"), for: UIControlState())
-        selectBtn.setImage(UIImage(named: "pic_selectedIcon"), for: .selected)
+        selectBtn.setImage(UIImage(named: "pic_unSelectedIcon", in: ResourcesBundle, compatibleWith: nil), for: UIControlState())
+        selectBtn.setImage(UIImage(named: "pic_selectedIcon", in: ResourcesBundle, compatibleWith: nil), for: .selected)
         selectBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 15, right: 5)
         contentView.addSubview(selectBtn)
         selectBtn.addTarget(self, action: #selector(chooseBtn(_:)), for: .touchUpInside)
@@ -446,7 +446,7 @@ class MGPhotoToolBarView:UIView{
                 }
                 else if string == "image"
                 {
-                    btn.setImage(UIImage(named: dict["value"] as! String), for: UIControlState())
+                    btn.setImage(UIImage(named:(dict["value"] as! String), in: ResourcesBundle, compatibleWith: nil), for: UIControlState())
                 }
             }
             addSubview(btn)

@@ -7,6 +7,7 @@
 //
 
 #import "ZLCameraImageView.h"
+#import "LGPhotoPickerCommon.h"
 
 @interface ZLCameraImageView ()
 @property (strong, nonatomic) UIImageView *deleBjView;
@@ -18,7 +19,7 @@
 - (UIImageView *)deleBjView{
     if (!_deleBjView) {
         _deleBjView = [[UIImageView alloc] init];
-        _deleBjView.image = [UIImage imageNamed:@"X.png"];
+        _deleBjView.image = GetImage(@"X.png");
         _deleBjView.frame = CGRectMake(50, 0, 25, 25);
         _deleBjView.hidden = YES;
         _deleBjView.userInteractionEnabled = YES;

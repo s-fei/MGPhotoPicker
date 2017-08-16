@@ -15,6 +15,7 @@
 #import "LGCameraImageView.h"
 #import "SCSlider.h"
 #import <MGProgressHUD/MGProgressHUD-Swift.h>
+#import "LGPhotoPickerCommon.h"
 
 typedef void(^codeBlock)();
 //static CGFloat BOTTOM_HEIGHT = 60;
@@ -309,7 +310,7 @@ typedef void(^codeBlock)();
 #pragma mark 初始化按钮
 - (UIButton *) setupButtonWithImageName : (NSString *) imageName andX : (CGFloat ) x{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [button setImage:GetImage(imageName) forState:UIControlStateNormal];
     button.backgroundColor = [UIColor clearColor];
     button.frame = CGRectMake(x, 0, 80, self.topView.frame.size.height);
     [self.topView addSubview:button];
@@ -377,7 +378,7 @@ typedef void(^codeBlock)();
     self.cameraBtn.frame = CGRectMake(x+margin, margin / 4, x, controlView.frame.size.height - margin / 2);
     self.cameraBtn.showsTouchWhenHighlighted = YES;
     self.cameraBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.cameraBtn setImage:[UIImage imageNamed:@"paizhao.png"] forState:UIControlStateNormal];
+    [self.cameraBtn setImage:GetImage(@"paizhao.png") forState:UIControlStateNormal];
     [self.cameraBtn addTarget:self action:@selector(stillImage:) forControlEvents:UIControlEventTouchUpInside];
     [controlView addSubview:self.cameraBtn];
     // 完成
