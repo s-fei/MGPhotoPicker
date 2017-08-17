@@ -170,10 +170,4 @@ open class MGZoomView: UIControl, UIScrollViewDelegate {
         }
     }
     
-    // MARK: - deinit
-    
-    deinit {
-        print("YSZoomView.swift释放了！");
-    }
-    
 }

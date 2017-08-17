@@ -21,9 +21,6 @@ class BasePhotoViewController: UIViewController {
     var statusBarStyle = UIApplication.shared.statusBarStyle
     var statusBarHidden = UIApplication.shared.isStatusBarHidden
     
-    deinit{
-      print("------->\(self.classForCoder)")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

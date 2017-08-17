@@ -45,7 +45,7 @@ class MGPickerViewController: BasePhotoViewController {
     var imageModelArray = [MGImageModel]()
     /*! 所有照片组中的照片 */
     var allImageModelArray = [MGImageModel]()
-    var collectionViewHight:CGFloat = UIScreen.main.bounds.width/2
+    var collectionViewHight:CGFloat = UIScreen.main.bounds.width/2 - 10
     deinit
     {
         
@@ -53,6 +53,8 @@ class MGPickerViewController: BasePhotoViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
@@ -65,7 +67,6 @@ class MGPickerViewController: BasePhotoViewController {
         contentView.addSubview(toolBarView)
         
         let layout = UICollectionViewFlowLayout()
-
         layout.scrollDirection = .horizontal
         pickerCollectionView = UICollectionView(frame: CGRect.zero,collectionViewLayout: layout)
         pickerCollectionView.delegate = self
@@ -161,7 +162,7 @@ class MGPickerViewController: BasePhotoViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         toolBarView.frame = CGRect(x: 0, y:0, width: view.bounds.width, height:40)
-        pickerCollectionView.frame = CGRect(x: 0, y: toolBarView.frame.maxY+5, width: view.bounds.width, height: collectionViewHight-10)
+        pickerCollectionView.frame = CGRect(x: 0, y: toolBarView.frame.maxY+5, width: view.bounds.width, height: collectionViewHight)
         editBarView.frame = CGRect(x: 0, y: pickerCollectionView.frame.maxY, width: view.bounds.width, height: 3)
         contentView.frame = CGRect(x: 0, y: view.bounds.height - editBarView.frame.maxY, width: view.bounds.width, height: editBarView.frame.maxY)
     }
@@ -257,12 +258,12 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
     {
         let model = imageModelArray[indexPath.row]
         let image = UIImage(cgImage:model.aset!.aspectRatioThumbnail().takeUnretainedValue())
-        return CGSize(width: collectionViewHight*image.size.width/image.size.height, height: collectionViewHight)
+        return CGSize(width: (collectionViewHight - 5)*image.size.width/image.size.height, height: (collectionViewHight - 5))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 2.5, left: 0, bottom: 2.5, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat
