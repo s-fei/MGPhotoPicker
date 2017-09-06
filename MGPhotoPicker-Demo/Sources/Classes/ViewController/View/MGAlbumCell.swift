@@ -21,7 +21,7 @@ class MGAlbumCell: UITableViewCell {
             if assetsGroup.posterImage() != nil
             {
                 iconImageView.backgroundColor = UIColor.clear
-                iconImageView.image = UIImage(cgImage: assetsGroup.posterImage().takeUnretainedValue())
+                iconImageView.image = assetsGroup.groupImage()
             }
             else
             {

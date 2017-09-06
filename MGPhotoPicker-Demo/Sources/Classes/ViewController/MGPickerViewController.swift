@@ -257,8 +257,9 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize
     {
         let model = imageModelArray[indexPath.row]
-        let image = UIImage(cgImage:model.aset!.aspectRatioThumbnail().takeUnretainedValue())
-        return CGSize(width: (collectionViewHight - 5)*image.size.width/image.size.height, height: (collectionViewHight - 5))
+        let image:UIImage? = model.aset?.aspectThumb_Image()
+        let imageSize = image?.size ?? CGSize(width: 50, height: 50)
+        return CGSize(width: (collectionViewHight - 5)*imageSize.width/imageSize.height, height: (collectionViewHight - 5))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
