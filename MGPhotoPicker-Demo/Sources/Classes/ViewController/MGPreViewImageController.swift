@@ -8,7 +8,7 @@
 
 
 /**
-   预览页面 可以有编辑功能
+ 预览页面 可以有编辑功能
  */
 
 
@@ -48,7 +48,7 @@ class MGPreViewImageController: BasePhotoViewController {
         }
     }
     
-
+    
     @IBOutlet weak var selectNumLabel: UILabel!{
         didSet{
             selectNumLabel.layer.cornerRadius = selectNumLabel.bounds.size.height/2
@@ -63,9 +63,9 @@ class MGPreViewImageController: BasePhotoViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
-             collectionView.alwaysBounceHorizontal = true;
-             collectionView.isPagingEnabled = true
-             collectionView.register(UINib(nibName: "MGPreViewCell", bundle: ResourcesBundle)  , forCellWithReuseIdentifier: "MGPreViewCell")
+            collectionView.alwaysBounceHorizontal = true;
+            collectionView.isPagingEnabled = true
+            collectionView.register(UINib(nibName: "MGPreViewCell", bundle: ResourcesBundle)  , forCellWithReuseIdentifier: "MGPreViewCell")
         }
     }
     
@@ -84,7 +84,7 @@ class MGPreViewImageController: BasePhotoViewController {
     /*! 是否有编辑功能 如果有编辑功能，就没有取消和选中功能
      */
     var isEditImage = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titlLabel.text = String(currentIndex+1) + "/" + String(imageModelArray.count)
@@ -125,17 +125,17 @@ class MGPreViewImageController: BasePhotoViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if !isCameraImage {
-//            UIApplication.sharedApplication().statusBarHidden = statusBarHidden
-//            UIApplication.sharedApplication().statusBarStyle = statusBarStyle
+            //            UIApplication.sharedApplication().statusBarHidden = statusBarHidden
+            //            UIApplication.sharedApplication().statusBarStyle = statusBarStyle
         }
     }
-
+    
     /**
      关闭按钮功能
      
      - parameter btn: <#btn description#>
      */
-    func closeBtnAction(_ btn:UIButton) {
+    @objc func closeBtnAction(_ btn:UIButton) {
         if isEditImage && isFinishEdit{
             let alertController = UIAlertController(title: "温馨提示",
                                                     message: "退出后将无法保存编辑后的图片。",
@@ -144,7 +144,7 @@ class MGPreViewImageController: BasePhotoViewController {
             let okAction = UIAlertAction(title: "确认", style: .default,
                                          handler: {
                                             [weak self] action in
-                                             guard let strongSelf = self else { return }
+                                            guard let strongSelf = self else { return }
                                             if let realCompletion = strongSelf.completionBlock {
                                                 for model in strongSelf.imageModelArray{
                                                     model.fullScreenImage = nil
@@ -177,7 +177,7 @@ class MGPreViewImageController: BasePhotoViewController {
     }
     
     /*! 选择和取消 */
-    func selectBtnAction(_ btn:UIButton) {
+    @objc func selectBtnAction(_ btn:UIButton) {
         if isSelectMax(btn){
             MGProgressHUD.showTextAndHiddenView(view, message: "最多可选\(selectMaxNum)张")
         }
@@ -219,7 +219,7 @@ class MGPreViewImageController: BasePhotoViewController {
     }
     
     /*! 确认按钮 确认后直接回到项目页面中去 */
-    func confirmBtnAction(_ btn:UIButton) {
+    @objc func confirmBtnAction(_ btn:UIButton) {
         let currentImageModels = imageModelArray.filter { (model) -> Bool in
             return  model.isSelecet
         }
@@ -234,7 +234,7 @@ class MGPreViewImageController: BasePhotoViewController {
     }
     
     /*! 编辑功能  直接过渡到编辑页面 */
-    func editBtnAction(_ btn:UIButton) {
+    @objc func editBtnAction(_ btn:UIButton) {
         let model = imageModelArray[currentIndex]
         let imageController = CLImageEditor(image:model.fullScreen_Image() , delegate: self)
         present(imageController!, animated: false, completion: nil)
@@ -247,9 +247,9 @@ extension MGPreViewImageController:CLImageEditorDelegate{
         if imageModelArray.count >  currentIndex {
             let model = imageModelArray[currentIndex]
             model.fullScreenImage = image
-//            if !isCameraImage {
-//                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
-//            }
+            //            if !isCameraImage {
+            //                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+            //            }
             collectionView.reloadItems(at: [IndexPath(row: currentIndex, section: 0)])
         }
         isFinishEdit = true
@@ -263,7 +263,7 @@ extension MGPreViewImageController:CLImageEditorDelegate{
 
 // MARK: - UICollectionViewDelegate,UICollectionViewDataSource
 extension MGPreViewImageController:UICollectionViewDelegate,UICollectionViewDataSource{
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return imageModelArray.count
@@ -332,3 +332,4 @@ extension MGPreViewImageController:UICollectionViewDelegate,UICollectionViewData
         selectBtn.isSelected = model.isSelecet
     }
 }
+

@@ -49,7 +49,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
     
     /*! 外部不要调用此方法额  调了也没有用 */
     fileprivate static let instancePicker = MGPhotoPicker()
-    fileprivate dynamic var pickerWindow:UIWindow!
+    @objc fileprivate dynamic var pickerWindow:UIWindow!
     fileprivate var isHidden = false
     
     override init() {
@@ -68,7 +68,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
             guard let strongSelf = self else { return }
             if let count = imageModels?.count, count > 0 {
                 strongSelf.tapInteriorConfirmAction(imageModels)
-//                return
+                //                return
             }
         }
         pickerWindow.rootViewController = pickerVC
@@ -186,7 +186,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
     }
     
     /*! 隐藏控件后移除 */
-
+    
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     {
         if pickerWindow != nil{
@@ -202,7 +202,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
     
     
     /*! 点击空白处隐藏控件 */
-    func  tapWindowAction(){
+    @objc func  tapWindowAction(){
         if let block = completionBlock
         {
             block(nil)
@@ -383,7 +383,7 @@ public class MGPhotoPicker: NSObject,CAAnimationDelegate {
         }
         dissmissWithFullScreen()
     }
-
+    
 }
 // MARK: - UIGestureRecognizerDelegate
 extension MGPhotoPicker:UIGestureRecognizerDelegate{

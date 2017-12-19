@@ -45,15 +45,15 @@ extension ALAsset {
 
 public class MGImageModel: NSObject {
     /*! 赋值使用 不要取值！！！！！！*/
-    var aset:ALAsset?
+    @objc var aset:ALAsset?
     /*! 赋值使用 不要取值！！！！！！*/
-    var thumbImage:UIImage?
+    @objc var thumbImage:UIImage?
     /*! 赋值使用 不要取值！！！！！！*/
-    var aspectThumbImage:UIImage?
+    @objc var aspectThumbImage:UIImage?
     /*! 赋值使用 不要取值！！！！！！*/
-    var fullScreenImage:UIImage?
+    @objc var fullScreenImage:UIImage?
     /*! 赋值使用 不要取值！！！！！！*/
-    var isSelecet = false
+    @objc var isSelecet = false
     
     
     func isNewImage()->Bool{
@@ -88,3 +88,4 @@ public class MGImageModel: NSObject {
         
     }
 }
+

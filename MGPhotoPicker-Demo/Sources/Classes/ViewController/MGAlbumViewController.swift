@@ -6,7 +6,7 @@
 //  Copyright © 2016年 MogoRoom. All rights reserved.
 //
 /**
-   显示相册各组
+ 显示相册各组
  */
 
 
@@ -14,7 +14,7 @@ import UIKit
 import  AssetsLibrary
 
 class MGAlbumViewController: BasePhotoViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!{
         didSet{
             tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: CGFloat.leastNormalMagnitude))
@@ -64,11 +64,11 @@ class MGAlbumViewController: BasePhotoViewController {
         // Do any additional setup after loading the view.
     }
     
-    func cancelAction(){
+    @objc func cancelAction(){
         guard let realCompletion = completionBlock else { return }
         realCompletion(nil , self)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.isStatusBarHidden = false
@@ -115,3 +115,4 @@ extension MGAlbumViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
 }
+
