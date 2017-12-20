@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGPhotoPicker"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "相册图片选择"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MGPhotoPicker-Demo/Sources/Classes/*.{h,m,swift}",'MGPhotoPicker-Demo/Sources/Classes/ViewController/**/*.{swift}'
+  s.source_files  = "Sources/Classes/*.{h,m,swift}",'Sources/Classes/ViewController/**/*.{swift}'
   # s.public_header_files = "MGPhotoPicker-Demo/Sources/Classes/*.{swift}"
   #s.exclude_files = "Classes/Exclude"
 
@@ -109,8 +109,8 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources  =  "MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.png","MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"
   s.resource_bundles = {
-    'Resources' => ["MGPhotoPicker-Demo/Sources/res/PhotoPicker/*.{png}",
-                    "MGPhotoPicker-Demo/Sources/Classes/**/*.{xib}"]
+    'Resources' => ["Sources/res/PhotoPicker/*.{png}",
+                    "Sources/Classes/**/*.{xib}"]
   }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -142,14 +142,14 @@ Pod::Spec.new do |s|
   s.dependency "MGProgressHUD"
 
   s.subspec 'ImageEditor' do |ss|
-    ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/**/*.{h,m}',
-                      'MGPhotoPicker-Demo/Sources/Classes/ImageEditor/OptionalImageTools/**/*.{h,m}'
-    ss.resources =  "MGPhotoPicker-Demo/Sources/Classes/ImageEditor/CLImageEditor/*.bundle"
+    ss.source_files = 'Sources/Classes/ImageEditor/CLImageEditor/**/*.{h,m}',
+                      'Sources/Classes/ImageEditor/OptionalImageTools/**/*.{h,m}'
+    ss.resources =  "Sources/Classes/ImageEditor/CLImageEditor/*.bundle"
   end
 
   s.subspec 'ZLCamera' do |ss|
-    ss.source_files = 'MGPhotoPicker-Demo/Sources/Classes/ZLCamera/**/*.{h,m}'
-    ss.resources =  "MGPhotoPicker-Demo/Sources/Classes/ZLCamera/Camera.bundle"
+    ss.source_files = 'Sources/Classes/ZLCamera/**/*.{h,m}'
+    ss.resources =  "Sources/Classes/ZLCamera/Camera.bundle"
   end
 
 end

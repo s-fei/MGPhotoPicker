@@ -1,0 +1,25 @@
+PODS:
+  - MGPhotoPicker (1.0.0):
+    - MGPhotoPicker/ImageEditor (= 1.0.0)
+    - MGPhotoPicker/ZLCamera (= 1.0.0)
+    - MGProgressHUD
+  - MGPhotoPicker/ImageEditor (1.0.0):
+    - MGProgressHUD
+  - MGPhotoPicker/ZLCamera (1.0.0):
+    - MGProgressHUD
+  - MGProgressHUD (3.0.2)
+
+DEPENDENCIES:
+  - MGPhotoPicker (from `../`)
+
+EXTERNAL SOURCES:
+  MGPhotoPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MGPhotoPicker: 8504512ec6c6ac4de6d79a73f4b98c8de4dfb9a5
+  MGProgressHUD: afe0de75876a6b98b43efc4abc568af76df68c62
+
+PODFILE CHECKSUM: ee9bcd53cb063861477397f3bdc4bc6c57274d1e
+
+COCOAPODS: 1.3.1

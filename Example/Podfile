@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MGPhotoPicker_Example' do
+  pod 'MGPhotoPicker', :path => '../'
+
+  target 'MGPhotoPicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
