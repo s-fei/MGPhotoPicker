@@ -7,7 +7,7 @@
 //
 
 /**
-    跳转预览的专场动画
+ 跳转预览的专场动画
  */
 
 import Foundation
@@ -31,7 +31,7 @@ class PresentAnimator: NSObject,UIViewControllerAnimatedTransitioning{
         //2.创建一个 Cell 中 imageView 的截图，并把 imageView 隐藏，造成使用户以为移动的就是 imageView 的假象
         let snapshotView = originView!.snapshotView(afterScreenUpdates: false)
         snapshotView!.frame = container.convert(originView!.frame, from: originView!.superview)
-//        originView!.hidden = true
+        //        originView!.hidden = true
         
         //3.设置目标控制器的位置，并把透明度设为0，在后面的动画中慢慢显示出来变为1
         toVC.view.frame = transitionContext.finalFrame(for: toVC)
@@ -39,7 +39,7 @@ class PresentAnimator: NSObject,UIViewControllerAnimatedTransitioning{
         //4.都添加到 container 中。注意顺序不能错了
         container.addSubview(toVC.view)
         container.addSubview(snapshotView!)
-//        container?.backgroundColor = UIColor.blackColor()
+        //        container?.backgroundColor = UIColor.blackColor()
         
         //5.执行动画
         
@@ -55,20 +55,20 @@ class PresentAnimator: NSObject,UIViewControllerAnimatedTransitioning{
         }) { (finish: Bool) -> Void in
             self.originView!.isHidden = false
             snapshotView!.removeFromSuperview()
-//            toVC.view.alpha = 1
+            //            toVC.view.alpha = 1
             toVC.collectionView.isHidden = false
             toVC.bottomView.isHidden = false
             transitionContext.completeTransition(true)
-//            container?.backgroundColor = UIColor.clearColor()
-//            UIView.animateWithDuration(0.2, animations: {
-//                 toVC.view.alpha = 1
-//                }, completion: { (boo) in
-//                    self.originView!.hidden = false
-//                    snapshotView.removeFromSuperview()
-//                    fromVC?.view.alpha = 1
-//                    //一定要记得动画完成后执行此方法，让系统管理 navigation
-//                    transitionContext.completeTransition(true)
-//            })
+            //            container?.backgroundColor = UIColor.clearColor()
+            //            UIView.animateWithDuration(0.2, animations: {
+            //                 toVC.view.alpha = 1
+            //                }, completion: { (boo) in
+            //                    self.originView!.hidden = false
+            //                    snapshotView.removeFromSuperview()
+            //                    fromVC?.view.alpha = 1
+            //                    //一定要记得动画完成后执行此方法，让系统管理 navigation
+            //                    transitionContext.completeTransition(true)
+            //            })
         }
     }
 }
@@ -121,3 +121,5 @@ class DismisssAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         }
     }
 }
+
+

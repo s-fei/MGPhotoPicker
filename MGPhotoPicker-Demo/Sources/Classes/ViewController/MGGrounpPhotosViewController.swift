@@ -7,7 +7,7 @@
 //
 
 /**
-  一个相册组中的所有照片
+ 一个相册组中的所有照片
  */
 
 import UIKit
@@ -32,12 +32,12 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
             selectNumLabel.layer.masksToBounds = true
         }
     }
-//    @IBOutlet weak var editBtn: UIButton!{
-//        didSet{
-//            editBtn.addTarget(self, action: #selector(editBtnAction(_:)), forControlEvents: .TouchUpInside)
-//        }
-//    }
-
+    //    @IBOutlet weak var editBtn: UIButton!{
+    //        didSet{
+    //            editBtn.addTarget(self, action: #selector(editBtnAction(_:)), forControlEvents: .TouchUpInside)
+    //        }
+    //    }
+    
     @IBOutlet weak var confirmBtn: UIButton!{
         didSet{
             confirmBtn.addTarget(self, action: #selector(confirmBtnAction(_:)), for: .touchUpInside)
@@ -61,7 +61,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
                     imagesArr.append(model)
                 }
             })
-           imageModelArray = imagesArr.reversed()
+            imageModelArray = imagesArr.reversed()
             if collectionView != nil {
                 collectionView.reloadData()
             }
@@ -69,7 +69,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
     }
     
     var imageModelArray = [MGImageModel]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "编辑", style: .plain, target: self, action: #selector(editBtnAction))
@@ -85,7 +85,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
         UIApplication.shared.setStatusBarStyle(.default, animated: false)
     }
     
-    func confirmBtnAction(_ btn:UIButton) {
+    @objc func confirmBtnAction(_ btn:UIButton) {
         let currentImageModels = imageModelArray.filter { (model) -> Bool in
             return  model.isSelecet
         }
@@ -110,7 +110,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
         selectNumLabel.layer.add(scaleAnimation, forKey: "")
     }
     
-    func editBtnAction() {
+    @objc func editBtnAction() {
         let currentImageModels = imageModelArray.filter { (model) -> Bool in
             return  model.isSelecet
         }
@@ -134,7 +134,7 @@ class MGGrounpPhotosViewController: BasePhotoViewController {
         }
         present(imageController, animated: true, completion: nil)
     }
-
+    
 }
 
 // MARK: - CLImageEditorDelegate
@@ -149,7 +149,7 @@ extension MGGrounpPhotosViewController:CLImageEditorDelegate{
 }
 
 // MARK: - UICollectionViewDelegate,UICollectionViewDataSource
-extension MGGrounpPhotosViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension MGGrounpPhotosViewController:UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         self.showSelectNumLabel()
@@ -213,23 +213,19 @@ extension MGGrounpPhotosViewController:UICollectionViewDelegate,UICollectionView
         return false
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (KScreenWidth - 6)/4, height: (KScreenWidth - 6)/4)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
-    {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
     
@@ -251,7 +247,7 @@ extension MGGrounpPhotosViewController:UICollectionViewDelegate,UICollectionView
                 viewController?.dismiss(animated: true, completion: nil)
             }
             imageController.transitioningDelegate = self
-//            presentAnimator.originView = cell.imageView
+            //            presentAnimator.originView = cell.imageView
             present(imageController, animated: true, completion: nil)
         }
     }

@@ -78,7 +78,8 @@ class MGPickerViewController: BasePhotoViewController {
         contentView.addSubview(pickerCollectionView)
         
         editBarView = UIView(frame: CGRect.zero)
-        editBarView.backgroundColor = UIColor(colorLiteralRed: 245.0/255, green: 245.0/255, blue: 245.0/255, alpha: 1)
+        
+        editBarView.backgroundColor = UIColor(red: 245.0/255, green: 245.0/255, blue: 245.0/255, alpha: 1)
         contentView.addSubview(editBarView)
         
         photoLibToImages()
@@ -188,7 +189,7 @@ class MGPickerViewController: BasePhotoViewController {
 }
 
 // MARK: - UICollectionViewDelegate,UICollectionViewDataSource
-extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         self.changConfirmAcionText()
@@ -242,19 +243,19 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
         }
         
         if currentImageModels.count == selectMaxNum && selectMaxNum == 1 && !btn.isSelected{
-           let model = currentImageModels.first
+            let model = currentImageModels.first
             model?.isSelecet = false
             let index = imageModelArray.index(of: model!)
             
             if let cell = pickerCollectionView.cellForItem(at: IndexPath(row: index!, section: 0)) as?MGImageCollectionCell {
-                 cell.selectBtn.isSelected = false
+                cell.selectBtn.isSelected = false
             }
         }
         
         return false
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let model = imageModelArray[indexPath.row]
         let image:UIImage? = model.aset?.aspectThumb_Image()
@@ -262,17 +263,17 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
         return CGSize(width: (collectionViewHight - 5)*imageSize.width/imageSize.height, height: (collectionViewHight - 5))
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
         return UIEdgeInsets(top: 2.5, left: 0, bottom: 2.5, right: 10)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
         return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
     {
         return 5
     }
@@ -288,8 +289,8 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
                 [weak self] (imageModels,viewController) in
                 guard let strongSelf = self else { return }
                 strongSelf.pickerCollectionView.reloadData()
-//                let cell = imageController.collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: imageController.currentIndex, inSection: 0)) as! MGPreViewCell
-//                imageController.dismissAnimator.toView = cell.zoomView.imageView
+                //                let cell = imageController.collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: imageController.currentIndex, inSection: 0)) as! MGPreViewCell
+                //                imageController.dismissAnimator.toView = cell.zoomView.imageView
                 if let realCompletion = strongSelf.completionBlock, let count = imageModels?.count, count > 0 {
                     realCompletion(imageModels!,strongSelf)
                     return
@@ -298,8 +299,8 @@ extension MGPickerViewController:UICollectionViewDelegate,UICollectionViewDataSo
             }
             imageController.transitioningDelegate = self
             presentAnimator.originView = cell.imageView
-//            imageController.dismissAnimator.fromView = cell.imageView
-//            dismissAnimator = imageController.dismissAnimator
+            //            imageController.dismissAnimator.fromView = cell.imageView
+            //            dismissAnimator = imageController.dismissAnimator
             present(imageController, animated: true, completion: nil)
         }
     }
@@ -325,7 +326,7 @@ class MGImageCollectionCell: UICollectionViewCell {
     
     var selectBtnSpacing:CGFloat = 5.0 {
         didSet{
-          layoutSubviews()
+            layoutSubviews()
         }
     }
     
@@ -357,7 +358,7 @@ class MGImageCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func chooseBtn(_ btn:UIButton){
+    @objc func chooseBtn(_ btn:UIButton){
         let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         scaleAnimation.keyTimes = [0,0.05,0.1,0.2,0.3]
         scaleAnimation.values = [1,1.1,1.2,1.1,1]
@@ -397,19 +398,19 @@ class MGPhotoToolBarView:UIView{
     fileprivate var topLineView:UIView!
     fileprivate var bottomLineView:UIView!
     
-//    private var btnTitleDict = [["key":"image","value":"cancel_icon","type":BarActionType.Cancel.rawValue],
-//                                ["key":"image","value":"preview_icon","type":BarActionType.Preview.rawValue],
-//                                ["key":"image","value":"photo_icon","type":BarActionType.Photo.rawValue],
-//                                ["key":"image","value":"camera_icon","type":BarActionType.Camera.rawValue],
-//                                ["key":"image","value":"edit_icon","type":BarActionType.Edit.rawValue],
-//                                ["key":"image","value":"confirm_icon","type":BarActionType.Confirm.rawValue]]
+    //    private var btnTitleDict = [["key":"image","value":"cancel_icon","type":BarActionType.Cancel.rawValue],
+    //                                ["key":"image","value":"preview_icon","type":BarActionType.Preview.rawValue],
+    //                                ["key":"image","value":"photo_icon","type":BarActionType.Photo.rawValue],
+    //                                ["key":"image","value":"camera_icon","type":BarActionType.Camera.rawValue],
+    //                                ["key":"image","value":"edit_icon","type":BarActionType.Edit.rawValue],
+    //                                ["key":"image","value":"confirm_icon","type":BarActionType.Confirm.rawValue]]
     
     fileprivate var btnTitleDict = [
-                                ["key":"image","value":"preview_icon","type":BarActionType.preview.rawValue],
-                                ["key":"image","value":"photo_icon","type":BarActionType.photo.rawValue],
-                                ["key":"image","value":"camera_icon","type":BarActionType.camera.rawValue],
-                                ["key":"image","value":"edit_icon","type":BarActionType.edit.rawValue],
-                                ["key":"text","value":"确定","type":BarActionType.confirm.rawValue]]
+        ["key":"image","value":"preview_icon","type":BarActionType.preview.rawValue],
+        ["key":"image","value":"photo_icon","type":BarActionType.photo.rawValue],
+        ["key":"image","value":"camera_icon","type":BarActionType.camera.rawValue],
+        ["key":"image","value":"edit_icon","type":BarActionType.edit.rawValue],
+        ["key":"text","value":"确定","type":BarActionType.confirm.rawValue]]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -428,22 +429,22 @@ class MGPhotoToolBarView:UIView{
             btn.clipsToBounds = true
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             btn.showsTouchWhenHighlighted = true
-//            if index == 1 || index == btnTitleDict.count {
-//                btn.setTitleColor(UIColor(colorLiteralRed: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), forState: .Normal)
-//            }
-//            else
-//            {
-//                btn.setTitleColor(UIColor(colorLiteralRed: 246.0/255, green: 80.0/255, blue: 0.0/255, alpha: 1), forState: .Normal)
-//            }
-             btn.setTitleColor(UIColor(colorLiteralRed: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), for: UIControlState())
+            //            if index == 1 || index == btnTitleDict.count {
+            //                btn.setTitleColor(UIColor(colorLiteralRed: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), forState: .Normal)
+            //            }
+            //            else
+            //            {
+            //                btn.setTitleColor(UIColor(colorLiteralRed: 246.0/255, green: 80.0/255, blue: 0.0/255, alpha: 1), forState: .Normal)
+            //            }
+            btn.setTitleColor(UIColor(red: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), for: UIControlState())
             
             let dict = btnTitleDict[index-1]
             if dict["key"] != nil {
                 let string = dict["key"] as? String
                 if string == "text" {
                     btn.setTitle(dict["value"] as? String, for: UIControlState())
-//                    btn.backgroundColor = kColors_LightBg
-//                    btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                    //                    btn.backgroundColor = kColors_LightBg
+                    //                    btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
                     
                 }
                 else if string == "image"
@@ -457,7 +458,7 @@ class MGPhotoToolBarView:UIView{
         }
     }
     
-    func selectBtn(_ btn:UIButton)  {
+    @objc func selectBtn(_ btn:UIButton)  {
         if selectBtnBlock != nil && btnArr.contains(btn) {
             let index = btnArr.index(of: btn)
             let dict = btnTitleDict[index!]
@@ -498,3 +499,4 @@ class MGPhotoToolBarView:UIView{
         }
     }
 }
+
