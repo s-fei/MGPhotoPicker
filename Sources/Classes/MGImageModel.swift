@@ -56,28 +56,28 @@ public class MGImageModel: NSObject {
     @objc var isSelecet = false
     
     
-    func isNewImage()->Bool{
+    public func isNewImage()->Bool{
         if fullScreenImage != nil {
             return true
         }
         return false
     }
     /*! 外部取值使用 */
-    func thumb_Image() -> UIImage?{
+    public func thumb_Image() -> UIImage?{
         if thumbImage != nil {
             return  thumbImage
         }
         return  aset?.thumb_Image()
     }
     /*! 外部取值使用 */
-    func aspectThumb_Image() -> UIImage?{
+    public func aspectThumb_Image() -> UIImage?{
         if aspectThumbImage != nil {
             return  aspectThumbImage
         }
         return aset?.aspectThumb_Image()
     }
     /*! 外部取值使用 */
-    func fullScreen_Image() -> UIImage?{
+    public func fullScreen_Image() -> UIImage?{
         if fullScreenImage != nil {
             return  fullScreenImage
         }
