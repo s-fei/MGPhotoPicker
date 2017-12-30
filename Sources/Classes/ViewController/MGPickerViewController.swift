@@ -112,7 +112,10 @@ class MGPickerViewController: BasePhotoViewController {
                 }
                 else if strongSelf.imageModelArray.count == 0 && strongSelf.groupModelArray.count == 0
                 {
-                    MGProgressHUD.showView(strongSelf.pickerCollectionView, icon: nil, message: "暂无最近照片", detailText: nil)
+                    MGProgressHUD.showView(strongSelf.pickerCollectionView,
+                                           iconImage: nil,
+                                           message: "暂无最近照片",
+                                           detailText: nil)
                 }
                 
             }
@@ -148,7 +151,10 @@ class MGPickerViewController: BasePhotoViewController {
         }
         MGProgressHUD.hiddenAllhubToView(contentView, animated: true)
         if imageModelArray.count == 0 {
-            MGProgressHUD.showView(pickerCollectionView, icon: nil, message: "暂无最近照片", detailText: nil)
+            MGProgressHUD.showView(pickerCollectionView,
+                                   iconImage: nil,
+                                   message: "暂无最近照片",
+                                   detailText: nil)
         }
         pickerCollectionView.reloadData()
     }
