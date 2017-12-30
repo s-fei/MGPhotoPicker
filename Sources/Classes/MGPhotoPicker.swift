@@ -12,7 +12,7 @@ import UIKit
 import AssetsLibrary
 import MGProgressHUD
 
-public class MGPhotoPicker: NSObject,CAAnimationDelegate {
+@objcMembers public class MGPhotoPicker: NSObject,CAAnimationDelegate {
     
     /*! window的RootViewController */
     var pickerVC:MGPickerViewController!

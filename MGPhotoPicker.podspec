@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MGPhotoPicker"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "相册图片选择"
 
   # This description is used to generate tags and improve search results.

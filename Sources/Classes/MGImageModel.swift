@@ -43,7 +43,7 @@ extension ALAsset {
     }
 }
 
-public class MGImageModel: NSObject {
+@objcMembers public class MGImageModel: NSObject {
     /*! 赋值使用 不要取值！！！！！！*/
     @objc var aset:ALAsset?
     /*! 赋值使用 不要取值！！！！！！*/
