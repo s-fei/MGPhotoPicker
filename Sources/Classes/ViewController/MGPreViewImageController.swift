@@ -220,12 +220,16 @@ class MGPreViewImageController: BasePhotoViewController {
     
     /*! 确认按钮 确认后直接回到项目页面中去 */
     @objc func confirmBtnAction(_ btn:UIButton) {
-        let currentImageModels = imageModelArray.filter { (model) -> Bool in
+        var currentImageModels = imageModelArray.filter { (model) -> Bool in
             return  model.isSelecet
         }
         if currentImageModels.count == 0 {
-            MGProgressHUD.showTextAndHiddenView(view, message: "请选择照片")
-            return
+//            MGProgressHUD.showTextAndHiddenView(view, message: "请选择照片")
+//            return
+            let model = imageModelArray[currentIndex]
+            model.isSelecet = true
+            selectBtn.isSelected = true
+            currentImageModels = [model]
         }
         if let realCompletion = completionBlock
         {

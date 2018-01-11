@@ -11,10 +11,12 @@ import MGPhotoPicker
 
 class ViewController: UIViewController {
     @IBOutlet weak var buttonAction: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func action(_ sender: Any) {
         MGPhotoPicker.showView(selectMaxNum: 3, isEditDraw: true) { (models) in
             print("Models:\(String(describing: models))")
+            self.imageView.image = models?.first?.fullScreen_Image()
         }
     }
     override func viewDidLoad() {
