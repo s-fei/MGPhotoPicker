@@ -81,7 +81,16 @@ extension ALAsset {
         if fullScreenImage != nil {
             return  fullScreenImage
         }
-        return aset?.fullScreen_Image()
+        if let fullScreen = aset?.fullScreen_Image() {
+            return fullScreen
+        }
+        if aspectThumbImage != nil {
+            return  aspectThumbImage
+        }
+        if let aspectThumb = aset?.aspectThumb_Image() {
+            return aspectThumb
+        }
+        return nil
     }
     
     override public func setValue(_ value: Any?, forUndefinedKey key: String) {
