@@ -19,7 +19,7 @@ class MGAlbumViewController: BasePhotoViewController {
         didSet{
             tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: CGFloat.leastNormalMagnitude))
             tableView.estimatedRowHeight = 500.0
-            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.rowHeight = UITableView.automaticDimension
             tableView.register(UINib(nibName: "MGAlbumCell", bundle: ResourcesBundle), forCellReuseIdentifier: "MGAlbumCell")
         }
     }

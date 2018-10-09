@@ -102,9 +102,9 @@ class MGPreViewImageController: BasePhotoViewController {
         }
         else
         {
-            selectBtn.setImage(nil, for: UIControlState())
+            selectBtn.setImage(nil, for: UIControl.State())
             selectBtn.setImage(nil, for: .selected)
-            selectBtn.setTitle("编辑", for: UIControlState())
+            selectBtn.setTitle("编辑", for: UIControl.State())
             selectBtn.addTarget(self, action: #selector(editBtnAction(_:)), for: .touchUpInside)
         }
         

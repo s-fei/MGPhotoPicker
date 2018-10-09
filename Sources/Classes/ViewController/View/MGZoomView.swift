@@ -161,7 +161,7 @@ open class MGZoomView: UIControl, UIScrollViewDelegate {
     
     open func show() {
         self.scrollView?.backgroundColor = UIColor.black
-        UIView.animate(withDuration: self.animDuration, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+        UIView.animate(withDuration: self.animDuration, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
             let imageSize = self.image?.size ?? CGSize(width: 50, height: 50)
             self.imageView?.bounds = CGRect(x: 0, y: 0, width: self.screenWidth, height: imageSize.height / imageSize.width * self.screenWidth)
             self.imageView?.center = (self.scrollView?.center)!

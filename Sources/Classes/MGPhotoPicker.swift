@@ -59,7 +59,7 @@ import MGProgressHUD
     fileprivate func createWindow(){
         
         pickerWindow = UIWindow(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        pickerWindow.windowLevel = 999 //UIWindowLevelAlert:2000  UIWindowLevelStatusBar:1000
+        pickerWindow.windowLevel = UIWindow.Level(rawValue: 999) //UIWindowLevelAlert:2000  UIWindowLevelStatusBar:1000
         pickerWindow.backgroundColor = UIColor.clear
         pickerVC = MGPickerViewController()
         pickerVC.customImageNum = customImageNum
@@ -118,7 +118,7 @@ import MGProgressHUD
         moveAnimation.values = [height,height*2/3,height/3,0,8,0]
         moveAnimation.duration = 0.65
         moveAnimation.isRemovedOnCompletion = false
-        moveAnimation.fillMode = kCAFillModeForwards
+        moveAnimation.fillMode = CAMediaTimingFillMode.forwards
         pickerVC.contentView.layer.add(moveAnimation, forKey: "")
         
         pickerVC.view.layer.opacity = 0
@@ -126,7 +126,7 @@ import MGProgressHUD
         alphaAnimation.toValue = 1
         alphaAnimation.duration = 0.5
         alphaAnimation.isRemovedOnCompletion = false;
-        alphaAnimation.fillMode = kCAFillModeForwards;
+        alphaAnimation.fillMode = CAMediaTimingFillMode.forwards;
         pickerVC.view.layer.add(alphaAnimation, forKey: "")
         pickerVC.view.layer.opacity = 1
     }
@@ -142,7 +142,7 @@ import MGProgressHUD
             moveAnimation.values = [0,height]
             moveAnimation.duration = 0.5
             moveAnimation.isRemovedOnCompletion = false
-            moveAnimation.fillMode = kCAFillModeForwards
+            moveAnimation.fillMode = CAMediaTimingFillMode.forwards
             moveAnimation.delegate = self
             pickerVC.contentView.layer.add(moveAnimation, forKey: "")
             
@@ -152,7 +152,7 @@ import MGProgressHUD
             alphaAnimation.duration = 0.50
             alphaAnimation.delegate = self
             alphaAnimation.isRemovedOnCompletion = false;
-            alphaAnimation.fillMode = kCAFillModeForwards;
+            alphaAnimation.fillMode = CAMediaTimingFillMode.forwards;
             pickerVC.view.layer.add(alphaAnimation, forKey: "dismissAlpaAnimation")
             pickerVC.view.layer.opacity = 0
             
@@ -170,7 +170,7 @@ import MGProgressHUD
             moveAnimation.values = [0,height]
             moveAnimation.duration = 0.4
             moveAnimation.isRemovedOnCompletion = false
-            moveAnimation.fillMode = kCAFillModeForwards
+            moveAnimation.fillMode = CAMediaTimingFillMode.forwards
             moveAnimation.delegate = self
             pickerWindow.layer.add(moveAnimation, forKey: "")
             
@@ -179,7 +179,7 @@ import MGProgressHUD
             alphaAnimation.duration = 0.50
             alphaAnimation.delegate = self
             alphaAnimation.isRemovedOnCompletion = false;
-            alphaAnimation.fillMode = kCAFillModeForwards;
+            alphaAnimation.fillMode = CAMediaTimingFillMode.forwards;
             pickerVC.view.layer.add(alphaAnimation, forKey: "dismissAlpaAnimation")
             pickerVC.view.layer.opacity = 0
         }
@@ -424,7 +424,7 @@ public extension MGPhotoPicker{
             let okAction = UIAlertAction(title: "去设置", style: .default,
                                          handler: {
                                             action in
-                                            UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+                                            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             })
             alertController.addAction(cancelAction)
             alertController.addAction(okAction)

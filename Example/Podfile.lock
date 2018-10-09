@@ -1,25 +1,29 @@
 PODS:
-  - MGPhotoPicker (1.0.0):
-    - MGPhotoPicker/ImageEditor (= 1.0.0)
-    - MGPhotoPicker/ZLCamera (= 1.0.0)
+  - MGPhotoPicker (1.0.5):
+    - MGPhotoPicker/ImageEditor (= 1.0.5)
+    - MGPhotoPicker/ZLCamera (= 1.0.5)
     - MGProgressHUD
-  - MGPhotoPicker/ImageEditor (1.0.0):
+  - MGPhotoPicker/ImageEditor (1.0.5):
     - MGProgressHUD
-  - MGPhotoPicker/ZLCamera (1.0.0):
+  - MGPhotoPicker/ZLCamera (1.0.5):
     - MGProgressHUD
-  - MGProgressHUD (3.0.2)
+  - MGProgressHUD (3.2.0)
 
 DEPENDENCIES:
   - MGPhotoPicker (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MGProgressHUD
+
 EXTERNAL SOURCES:
   MGPhotoPicker:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  MGPhotoPicker: 8504512ec6c6ac4de6d79a73f4b98c8de4dfb9a5
-  MGProgressHUD: afe0de75876a6b98b43efc4abc568af76df68c62
+  MGPhotoPicker: a126486963c34b9292e257b6af806711c6577484
+  MGProgressHUD: 6f49705f3a8f44ac28bd730f8f13e1b04acade16
 
 PODFILE CHECKSUM: ee9bcd53cb063861477397f3bdc4bc6c57274d1e
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.0.beta.1

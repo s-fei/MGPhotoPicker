@@ -50,7 +50,7 @@ class PresentAnimator: NSObject,UIViewControllerAnimatedTransitioning{
         let finalHeight = KScreenWidth*snapshotView!.frame.height/snapshotView!.frame.width
         let finalFrame = CGRect(x: 0, y: (KScreenHeight - finalHeight)/2, width: KScreenWidth, height: finalHeight)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.AnimationOptions(), animations: { () -> Void in
             snapshotView!.frame = finalFrame
         }) { (finish: Bool) -> Void in
             self.originView!.isHidden = false
@@ -108,7 +108,7 @@ class DismisssAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         
         let finalFrame = container.convert(fromView!.frame, from: fromView!.superview)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: UIView.AnimationOptions(), animations: { () -> Void in
             snapshotView!.frame = finalFrame
             fromVC!.view.alpha = 1
         }) { (finish: Bool) -> Void in

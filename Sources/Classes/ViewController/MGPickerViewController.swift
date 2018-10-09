@@ -184,12 +184,12 @@ class MGPickerViewController: BasePhotoViewController {
         let btn = toolBarView.btnArr.last
         if currentImageModels.count > 0 {
             btn?.titleLabel?.text = "确认(\(currentImageModels.count))"
-            btn?.setTitle("确认(\(currentImageModels.count))", for: UIControlState())
+            btn?.setTitle("确认(\(currentImageModels.count))", for: UIControl.State())
         }
         else
         {
             btn?.titleLabel?.text = "确认"
-            btn?.setTitle("确认", for: UIControlState())
+            btn?.setTitle("确认", for: UIControl.State())
         }
     }
 }
@@ -353,7 +353,7 @@ class MGImageCollectionCell: UICollectionViewCell {
         imageView.layer.addSublayer(imageLayer)
         
         selectBtn = UIButton(type: .custom)
-        selectBtn.setImage(UIImage(named: "pic_unSelectedIcon", in: ResourcesBundle, compatibleWith: nil), for: UIControlState())
+        selectBtn.setImage(UIImage(named: "pic_unSelectedIcon", in: ResourcesBundle, compatibleWith: nil), for: UIControl.State())
         selectBtn.setImage(UIImage(named: "pic_selectedIcon", in: ResourcesBundle, compatibleWith: nil), for: .selected)
         selectBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 15, right: 5)
         contentView.addSubview(selectBtn)
@@ -442,20 +442,20 @@ class MGPhotoToolBarView:UIView{
             //            {
             //                btn.setTitleColor(UIColor(colorLiteralRed: 246.0/255, green: 80.0/255, blue: 0.0/255, alpha: 1), forState: .Normal)
             //            }
-            btn.setTitleColor(UIColor(red: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), for: UIControlState())
+            btn.setTitleColor(UIColor(red: 45.0/255, green: 45.0/255, blue: 45.0/255, alpha: 1), for: UIControl.State())
             
             let dict = btnTitleDict[index-1]
             if dict["key"] != nil {
                 let string = dict["key"] as? String
                 if string == "text" {
-                    btn.setTitle(dict["value"] as? String, for: UIControlState())
+                    btn.setTitle(dict["value"] as? String, for: UIControl.State())
                     //                    btn.backgroundColor = kColors_LightBg
                     //                    btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
                     
                 }
                 else if string == "image"
                 {
-                    btn.setImage(UIImage(named:(dict["value"] as! String), in: ResourcesBundle, compatibleWith: nil), for: UIControlState())
+                    btn.setImage(UIImage(named:(dict["value"] as! String), in: ResourcesBundle, compatibleWith: nil), for: UIControl.State())
                 }
             }
             addSubview(btn)
