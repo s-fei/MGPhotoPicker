@@ -45,7 +45,7 @@
 		AD62B2BF3321B42240D18954 /* Pods-MGPhotoPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGPhotoPicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGPhotoPicker_Tests/Pods-MGPhotoPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B321C2219E863E65EC43DD29 /* Pods_MGPhotoPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGPhotoPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB720B86CB6224CAD71F14D3 /* Pods-MGPhotoPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGPhotoPicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MGPhotoPicker_Tests/Pods-MGPhotoPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C66C4D1C4CB7C52200C88CF3 /* MGPhotoPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MGPhotoPicker.podspec; path = ../MGPhotoPicker.podspec; sourceTree = "<group>"; };
+		C66C4D1C4CB7C52200C88CF3 /* MGPhotoPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MGPhotoPicker.podspec; path = ../MGPhotoPicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F89D63F922A8C0BA37480576 /* Pods-MGPhotoPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MGPhotoPicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MGPhotoPicker_Example/Pods-MGPhotoPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
